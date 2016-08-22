@@ -20,16 +20,24 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		float horizontalAxisOffset = Input.GetAxis ("Horizontal");
-		float verticalAxisOffset = Input.GetAxis ("Vertical");
+		float movementHorizontalAxisOffset = Input.GetAxis ("Horizontal");
+		float movementVerticalAxisOffset = Input.GetAxis ("Vertical");
 
-		Move (horizontalAxisOffset, verticalAxisOffset);
+		float rotationHorizontalAxisOffset = Input.GetAxis ("RotateX");
+		float rotationVerticalAxisOffset = Input.GetAxis ("RotateY");
+
+		Move (movementHorizontalAxisOffset, movementVerticalAxisOffset);
+		Rotate (rotationHorizontalAxisOffset, rotationVerticalAxisOffset);
 	}
 
-	void Move(float horizontalAxisOffset, float verticalAxisOffset) {
-		Vector3 movement = new Vector3 (horizontalAxisOffset * movementSpeed * Time.deltaTime,  0f, verticalAxisOffset * movementSpeed * Time.deltaTime);
+	void Move(float movementHorizontalAxisOffset, float movementVerticalAxisOffset) {
+		Vector3 movement = new Vector3 (movementHorizontalAxisOffset * movementSpeed * Time.deltaTime,  0f, movementVerticalAxisOffset * movementSpeed * Time.deltaTime);
 
 		playerRigidbody.MovePosition (playerTransform.position + movement);
+	}
+
+	void Rotate(float rotationHorizontalAxisOffset, float rotationVerticalAxisOffset) {
+		playerTransform.eulerAngles = new Vector3 (0f, Mathf.Atan2(rotationHorizontalAxisOffset, rotationVerticalAxisOffset) * Mathf.Rad2Deg, 0f);
 	}
 
 	public void ResetPosition () {
