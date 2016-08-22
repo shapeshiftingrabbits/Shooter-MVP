@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void ResetPosition () {
-		playerTransform.position = new Vector3 (0f, 0.5f, 0f);
+		playerTransform.position = new Vector3 (0f, 0f, 0f);
 	}
 
 	public void Die () {
