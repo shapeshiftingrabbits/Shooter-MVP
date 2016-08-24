@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveTowardsPlayer : MonoBehaviour {
 	private GameObject player;
-	private float rotationSpeed = 5f;
+	private float rotationSpeed = 1f;
 	private float movementSpeed = 3f;
 
 	void Start () {

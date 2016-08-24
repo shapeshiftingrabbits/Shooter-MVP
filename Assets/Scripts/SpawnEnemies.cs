@@ -5,7 +5,7 @@ public class SpawnEnemies : MonoBehaviour {
 
 	public GameObject player;
 	public GameObject enemyPrefab;
-	float spawnRate = 3f;
+	float spawnRate = 0.5f;
 	float spawnRateCounter = 3f;
 	int spawnMinRadius = 20;
 	int spawnMaxRadius = 50;
