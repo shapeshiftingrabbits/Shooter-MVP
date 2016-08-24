@@ -8,6 +8,7 @@ public class EnemyBulletCollision : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		if (other.gameObject.tag == bulletTag) {
 			Destroy (gameObject);
+			Destroy (other.gameObject);
 		}
 	}
 }
