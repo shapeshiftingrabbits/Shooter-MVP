@@ -43,8 +43,4 @@ public class PlayerController : MonoBehaviour {
 	public void ResetPosition () {
 		playerTransform.position = new Vector3 (0f, 0f, 0f);
 	}
-
-	public void Die () {
-		SceneManager.LoadScene ("Main");
-	}
 }
