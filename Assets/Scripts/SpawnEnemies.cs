@@ -7,10 +7,8 @@ public class SpawnEnemies : MonoBehaviour {
 	public GameObject enemyPrefab;
 	float spawnRate = 3f;
 	float spawnRateCounter = 3f;
-	int spawnMinDistanceX = 10;
-	int spawnMinDistanceZ = 10;
-	int spawnMaxDistanceX = 20;
-	int spawnMaxDistanceZ = 20;
+	int spawnMinRadius = 20;
+	int spawnMaxRadius = 50;
 
 	void Update () {
 		spawnRateCounter += Time.deltaTime;
@@ -26,12 +24,19 @@ public class SpawnEnemies : MonoBehaviour {
 	}
 
 	Vector3 enemyRandomSpawnPosition () {
-		return (
-			new Vector3 (
-				Random.Range(spawnMinDistanceX, spawnMaxDistanceX),
-				0f,
-				Random.Range(spawnMinDistanceZ, spawnMaxDistanceZ)
-			)
-		);
+		Vector3 newPosition = randomPositionAroundPlayer() + player2DPosition();
+
+		newPosition.z = newPosition.y;
+		newPosition.y = 0;
+
+		return newPosition;
+	}
+
+	Vector2 randomPositionAroundPlayer () {
+		return (Random.insideUnitCircle.normalized * Random.Range(spawnMinRadius, spawnMaxRadius));
+	}
+
+	Vector2 player2DPosition () {
+		return (new Vector2 (player.transform.position.x, player.transform.position.z));
 	}
 }
