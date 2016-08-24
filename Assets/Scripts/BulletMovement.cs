@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BulletMovement : MonoBehaviour {
-	private float movementSpeed = 5f;
+	private float movementSpeed = 25f;
 
 	void Update () {
 		gameObject.transform.position += nextPosition(Time.deltaTime);

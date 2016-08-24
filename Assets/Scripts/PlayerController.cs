@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent (typeof (Rigidbody))]
 public class PlayerController : MonoBehaviour {
 
-	public float movementSpeed = 5f;
+	private float movementSpeed = 10f;
 
 	Transform playerTransform;
 	Rigidbody playerRigidbody;

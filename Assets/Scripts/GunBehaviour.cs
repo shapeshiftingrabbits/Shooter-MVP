@@ -4,7 +4,7 @@ using System.Collections;
 public class GunBehaviour : MonoBehaviour {
 
 	public GameObject bulletPrefab;
-	private float fireRate = 1f;
+	private float fireRate = 0.2f;
 	private float lastShotInterval;
 
 	// Use this for initialization
