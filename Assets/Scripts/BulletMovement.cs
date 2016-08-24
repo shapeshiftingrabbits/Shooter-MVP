@@ -11,4 +11,8 @@ public class BulletMovement : MonoBehaviour {
 	Vector3 nextPosition(float deltaTime) {
 		return (gameObject.transform.up * deltaTime * movementSpeed);
 	}
+
+	void OnBecameInvisible () {
+		Destroy (gameObject);
+	}
 }
