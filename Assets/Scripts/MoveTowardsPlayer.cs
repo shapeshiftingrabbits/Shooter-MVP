@@ -2,9 +2,13 @@
 using System.Collections;
 
 public class MoveTowardsPlayer : MonoBehaviour {
-	public GameObject player;
+	private GameObject player;
 	private float rotationSpeed = 5f;
 	private float movementSpeed = 3f;
+
+	void Start () {
+		player = GameObject.Find ("Player");
+	}
 
 	void Update () {
 		Rotate (Time.deltaTime);
