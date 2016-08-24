@@ -28,7 +28,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 459220}
   - 33: {fileID: 3330536}
-  - 64: {fileID: 6425130}
   - 23: {fileID: 2344036}
   m_Layer: 0
   m_Name: Ground
@@ -273,18 +272,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!64 &6425130
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 160914}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &6501030
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -306,7 +293,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.95943207, b: 0.7647059, a: 1}
   m_Intensity: 2
   m_Range: 20
   m_SpotAngle: 80
