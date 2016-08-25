@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a8aa10512bb388458585d210bc98205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 160434, guid: 525a087b673bbf049aedaf594b4683d8, type: 2}
+  player: {fileID: 193302, guid: 525a087b673bbf049aedaf594b4683d8, type: 2}
   enemyPrefab: {fileID: 160522, guid: cebb16e26aa609e4f82d9c845062b862, type: 2}
 --- !u!1 &2036671968
 GameObject:
