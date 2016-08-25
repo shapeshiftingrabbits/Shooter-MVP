@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour {
 
 	private float movementSpeed = 10f;
+	private float rotationSpeed = 10f;
 	private float movementDeadzone = 0.25f;
 	private float rotationDeadzone = 0.25f;
 
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour {
 
 		Vector2 rotationInput = stickInput ("RotateX", "RotateY");
 		if (rotationInput.magnitude >= rotationDeadzone) {
-			Rotate (rotationInput);
+			Rotate (rotationInput, Time.deltaTime);
 		}
 	}
 
@@ -43,10 +44,10 @@ public class PlayerController : MonoBehaviour {
 		playerRigidbody.MovePosition (playerTransform.position + movement);
 	}
 
-	void Rotate(Vector2 rotationInput) {
+	void Rotate(Vector2 rotationInput, float deltaTime) {
 		float angle = Mathf.Atan2(rotationInput.x, rotationInput.y) * Mathf.Rad2Deg;
 
-		playerTransform.eulerAngles = new Vector3 (0f, angle, 0f);
+		playerTransform.rotation = Quaternion.Slerp(playerTransform.rotation, Quaternion.Euler(0f, angle, 0f), deltaTime * rotationSpeed);
 	}
 
 	public void ResetPosition () {
