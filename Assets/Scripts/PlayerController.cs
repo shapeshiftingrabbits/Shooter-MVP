@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour {
 
 	private float movementSpeed = 10f;
+	private float rotationSpeed = 10f;
+	private float movementDeadzone = 0.25f;
+	private float rotationDeadzone = 0.25f;
 
 	Transform playerTransform;
 	Rigidbody playerRigidbody;
@@ -20,24 +23,31 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		float movementHorizontalAxisOffset = Input.GetAxis ("Horizontal");
-		float movementVerticalAxisOffset = Input.GetAxis ("Vertical");
+		Vector2 movementInput = stickInput ("Horizontal", "Vertical");
+		if (movementInput.magnitude >= movementDeadzone) {
+			Move (movementInput);
+		}
 
-		float rotationHorizontalAxisOffset = Input.GetAxis ("RotateX");
-		float rotationVerticalAxisOffset = Input.GetAxis ("RotateY");
-
-		Move (movementHorizontalAxisOffset, movementVerticalAxisOffset);
-		Rotate (rotationHorizontalAxisOffset, rotationVerticalAxisOffset);
+		Vector2 rotationInput = stickInput ("RotateX", "RotateY");
+		if (rotationInput.magnitude >= rotationDeadzone) {
+			Rotate (rotationInput, Time.deltaTime);
+		}
 	}
 
-	void Move(float movementHorizontalAxisOffset, float movementVerticalAxisOffset) {
-		Vector3 movement = new Vector3 (movementHorizontalAxisOffset * movementSpeed * Time.deltaTime,  0f, movementVerticalAxisOffset * movementSpeed * Time.deltaTime);
+	Vector2 stickInput(string XAxisName, string YAxisName) {
+		return new Vector2 (Input.GetAxis (XAxisName), Input.GetAxis (YAxisName));
+	}
+
+	void Move(Vector2 movementInput) {
+		Vector3 movement = new Vector3 (movementInput.x * movementSpeed * Time.deltaTime,  0f, movementInput.y * movementSpeed * Time.deltaTime);
 
 		playerRigidbody.MovePosition (playerTransform.position + movement);
 	}
 
-	void Rotate(float rotationHorizontalAxisOffset, float rotationVerticalAxisOffset) {
-		playerTransform.eulerAngles = new Vector3 (0f, Mathf.Atan2(rotationHorizontalAxisOffset, rotationVerticalAxisOffset) * Mathf.Rad2Deg, 0f);
+	void Rotate(Vector2 rotationInput, float deltaTime) {
+		float angle = Mathf.Atan2(rotationInput.x, rotationInput.y) * Mathf.Rad2Deg;
+
+		playerTransform.rotation = Quaternion.Slerp(playerTransform.rotation, Quaternion.Euler(0f, angle, 0f), deltaTime * rotationSpeed);
 	}
 
 	public void ResetPosition () {
