@@ -12,13 +12,14 @@ public class SpawnEnemies : MonoBehaviour {
 
 	float spawnSpeedTick;
 	float enemiesPerSecond = 1f;
+	float minimumEnemiesPerSecond = 1f;
 	float maximumEnemiesPerSecond = 10f;
 	float enemiesPerSecondIncrease = 0.01f;
 
-	float enemiesPerSecondIncreasePlayTimeInterval = 2f;
+	float enemiesPerSecondIncreasePlayTimeInterval = 1f;
 
-	int nextKillsIncrease;
-	int enemiesPerSecondIncreaseKillsInterval = 10;
+	int nextKillsDecrease;
+	int enemiesPerSecondDecreaseKillsInterval = 5;
 
 	int spawnMinRadius = 20;
 	int spawnMaxRadius = 50;
@@ -26,7 +27,7 @@ public class SpawnEnemies : MonoBehaviour {
 	void Start () {
 		spawnSpeedTick = SpawnSpeed();
 		playerScript = playerGameObject.GetComponent<PlayerScript> ();
-		nextKillsIncrease = enemiesPerSecondIncreaseKillsInterval;
+		nextKillsDecrease = enemiesPerSecondDecreaseKillsInterval;
 	}
 
 	void Update () {
@@ -76,9 +77,9 @@ public class SpawnEnemies : MonoBehaviour {
 			previousPlayTimeTick = currentPlayTime;
 		}
 
-		if (playerScript.player.EnemiesKilled() == nextKillsIncrease) {
-			enemiesPerSecond = Mathf.Clamp (enemiesPerSecond + enemiesPerSecondIncrease, enemiesPerSecond, maximumEnemiesPerSecond);
-			nextKillsIncrease += enemiesPerSecondIncreaseKillsInterval;
+		if (playerScript.player.EnemiesKilled() == nextKillsDecrease) {
+			enemiesPerSecond = Mathf.Clamp (enemiesPerSecond - enemiesPerSecondIncrease, minimumEnemiesPerSecond, enemiesPerSecond);
+			nextKillsDecrease += enemiesPerSecondDecreaseKillsInterval;
 		}
 	}
 }
