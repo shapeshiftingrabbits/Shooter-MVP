@@ -6,42 +6,51 @@ public class SpawnEnemies : MonoBehaviour {
 	public GameObject playerGameObject;
 	private PlayerScript playerScript;
 	public GameObject enemyPrefab;
+
 	float previousPlayTimeTick = 0f;
 	float currentPlayTime = 0f;
-	float spawnRate = 0.5f;
-	float minimumSpawnRate = 0.1f;
-	float spawnRateCounter;
+
+	float spawnSpeedTick;
+	float enemiesPerSecond = 1f;
+	float maximumEnemiesPerSecond = 10f;
+	float enemiesPerSecondIncrease = 0.01f;
+
+	float enemiesPerSecondIncreasePlayTimeInterval = 2f;
+
+	int nextKillsIncrease;
+	int enemiesPerSecondIncreaseKillsInterval = 10;
+
 	int spawnMinRadius = 20;
 	int spawnMaxRadius = 50;
-	int nextPlayerKillsIncrease;
-	float spawnRateIncreaseSecondsInterval = 2f;
-	int spawnRateIncreaseKillsInterval = 10;
-	float spawnRateIncrease = 0.01f;
 
 	void Start () {
-		spawnRateCounter = spawnRate;
+		spawnSpeedTick = SpawnSpeed();
 		playerScript = playerGameObject.GetComponent<PlayerScript> ();
-		nextPlayerKillsIncrease = spawnRateIncreaseKillsInterval;
+		nextKillsIncrease = enemiesPerSecondIncreaseKillsInterval;
 	}
 
 	void Update () {
 		currentPlayTime += Time.deltaTime;
-		spawnRateCounter += Time.deltaTime;
+		spawnSpeedTick += Time.deltaTime;
 
-		if (spawnRateCounter >= spawnRate) {
+		if (spawnSpeedTick >= SpawnSpeed()) {
 			SpawnEnemy ();
-			spawnRateCounter = 0f;
+			spawnSpeedTick = 0f;
 		}
 
-		if (spawnRate > minimumSpawnRate) {
+		if (enemiesPerSecond <= maximumEnemiesPerSecond) {
 			IncreaseSpawnRate ();
 		}
 
-		Debug.Log ("Spawn rate: " + spawnRate + ", " + (1f / spawnRate) + " enemies per second");
+		Debug.Log (SpawnSpeed() + " seconds spawn speed = " + enemiesPerSecond + " enemies per second");
 	}
 
 	void SpawnEnemy () {
 		Instantiate (enemyPrefab, enemyRandomSpawnPosition(), Quaternion.identity);
+	}
+
+	float SpawnSpeed() {
+		return (1f / enemiesPerSecond);
 	}
 
 	Vector3 enemyRandomSpawnPosition () {
@@ -62,14 +71,14 @@ public class SpawnEnemies : MonoBehaviour {
 	}
 
 	void IncreaseSpawnRate() {
-		if (currentPlayTime - previousPlayTimeTick >= spawnRateIncreaseSecondsInterval) {
-			spawnRate = Mathf.Clamp (spawnRate - spawnRateIncrease, minimumSpawnRate, spawnRate);
+		if (currentPlayTime - previousPlayTimeTick >= enemiesPerSecondIncreasePlayTimeInterval) {
+			enemiesPerSecond = Mathf.Clamp (enemiesPerSecond + enemiesPerSecondIncrease, enemiesPerSecond, maximumEnemiesPerSecond);
 			previousPlayTimeTick = currentPlayTime;
 		}
 
-		if (playerScript.player.EnemiesKilled() == nextPlayerKillsIncrease) {
-			spawnRate = Mathf.Clamp (spawnRate - spawnRateIncrease, minimumSpawnRate, spawnRate);
-			nextPlayerKillsIncrease += spawnRateIncreaseKillsInterval;
+		if (playerScript.player.EnemiesKilled() == nextKillsIncrease) {
+			enemiesPerSecond = Mathf.Clamp (enemiesPerSecond + enemiesPerSecondIncrease, enemiesPerSecond, maximumEnemiesPerSecond);
+			nextKillsIncrease += enemiesPerSecondIncreaseKillsInterval;
 		}
 	}
 }
