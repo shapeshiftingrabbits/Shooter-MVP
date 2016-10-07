@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGameObject: {fileID: 2036671968}
-  enemyPrefab: {fileID: 160522, guid: cebb16e26aa609e4f82d9c845062b862, type: 2}
+  enemyPrefab: {fileID: 194852, guid: cebb16e26aa609e4f82d9c845062b862, type: 2}
 --- !u!1001 &1840599454
 Prefab:
   m_ObjectHideFlags: 0
@@ -705,7 +705,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 472162, guid: 525a087b673bbf049aedaf594b4683d8, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 163732, guid: 525a087b673bbf049aedaf594b4683d8, type: 2}
       propertyPath: m_IsActive
