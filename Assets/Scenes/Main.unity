@@ -172,7 +172,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &30246076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,6 +441,10 @@ Prefab:
     - target: {fileID: 10898376, guid: 525a087b673bbf049aedaf594b4683d8, type: 2}
       propertyPath: m_CullingMask.m_Bits
       value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 163732, guid: 525a087b673bbf049aedaf594b4683d8, type: 2}
+      propertyPath: m_Name
+      value: Awareness area light
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 525a087b673bbf049aedaf594b4683d8, type: 2}
