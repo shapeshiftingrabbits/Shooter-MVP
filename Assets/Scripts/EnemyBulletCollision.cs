@@ -15,7 +15,6 @@ public class EnemyBulletCollision : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		if (other.gameObject.tag == bulletTag) {
 			playerScript.player.incrementEnemyKills ();
-			Debug.Log (playerScript.player.EnemiesKilled());
 			Destroy (gameObject);
 			Destroy (other.gameObject);
 		}
