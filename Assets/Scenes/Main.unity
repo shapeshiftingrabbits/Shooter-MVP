@@ -469,11 +469,55 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 482168, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114082, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426872, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 145268, guid: 25e55aec7d1ddcd4098c4886ca6f58ec, type: 2}
+    - target: {fileID: 11461394, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 145268, guid: 25e55aec7d1ddcd4098c4886ca6f58ec, type: 2}
+    - target: {fileID: 187278, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 121948, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 177738, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 172194, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 132268, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 113630, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 177290, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 112710, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 187278, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
