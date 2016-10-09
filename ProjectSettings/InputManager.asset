@@ -182,7 +182,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: RotateY
+    m_Name: RotateX
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -198,7 +198,7 @@ InputManager:
     axis: 3
     joyNum: 0
   - serializedVersion: 3
-    m_Name: RotateX
+    m_Name: RotateY
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -209,7 +209,7 @@ InputManager:
     dead: 0.001
     sensitivity: 1
     snap: 1
-    invert: 0
+    invert: 1
     type: 2
     axis: 4
     joyNum: 0
