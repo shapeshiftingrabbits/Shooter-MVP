@@ -3,24 +3,55 @@ using System.Collections;
 
 public class SpawnEnemies : MonoBehaviour {
 
-	public GameObject player;
+	public GameObject playerGameObject;
+	private PlayerScript playerScript;
 	public GameObject enemyPrefab;
-	float spawnRate = 0.5f;
-	float spawnRateCounter = 3f;
+
+	float previousPlayTimeTick = 0f;
+	float currentPlayTime = 0f;
+
+	float spawnSpeedTick;
+	float enemiesPerSecond = 1f;
+	float minimumEnemiesPerSecond = 1f;
+	float maximumEnemiesPerSecond = 10f;
+	float enemiesPerSecondIncrease = 0.01f;
+
+	float enemiesPerSecondIncreasePlayTimeInterval = 1f;
+
+	int nextKillsDecrease;
+	int enemiesPerSecondDecreaseKillsInterval = 5;
+
 	int spawnMinRadius = 20;
 	int spawnMaxRadius = 50;
 
-	void Update () {
-		spawnRateCounter += Time.deltaTime;
+	void Start () {
+		spawnSpeedTick = SpawnSpeed();
+		playerScript = playerGameObject.GetComponent<PlayerScript> ();
+		nextKillsDecrease = enemiesPerSecondDecreaseKillsInterval;
+	}
 
-		if (spawnRateCounter >= spawnRate) {
+	void Update () {
+		currentPlayTime += Time.deltaTime;
+		spawnSpeedTick += Time.deltaTime;
+
+		if (spawnSpeedTick >= SpawnSpeed()) {
 			SpawnEnemy ();
-			spawnRateCounter = 0f;
+			spawnSpeedTick = 0f;
 		}
+
+		if (enemiesPerSecond <= maximumEnemiesPerSecond) {
+			IncreaseSpawnRate ();
+		}
+
+		Debug.Log (SpawnSpeed() + " seconds spawn speed = " + enemiesPerSecond + " enemies per second");
 	}
 
 	void SpawnEnemy () {
 		Instantiate (enemyPrefab, enemyRandomSpawnPosition(), Quaternion.identity);
+	}
+
+	float SpawnSpeed() {
+		return (1f / enemiesPerSecond);
 	}
 
 	Vector3 enemyRandomSpawnPosition () {
@@ -37,6 +68,18 @@ public class SpawnEnemies : MonoBehaviour {
 	}
 
 	Vector2 player2DPosition () {
-		return (new Vector2 (player.transform.position.x, player.transform.position.z));
+		return (new Vector2 (playerGameObject.transform.position.x, playerGameObject.transform.position.z));
+	}
+
+	void IncreaseSpawnRate() {
+		if (currentPlayTime - previousPlayTimeTick >= enemiesPerSecondIncreasePlayTimeInterval) {
+			enemiesPerSecond = Mathf.Clamp (enemiesPerSecond + enemiesPerSecondIncrease, enemiesPerSecond, maximumEnemiesPerSecond);
+			previousPlayTimeTick = currentPlayTime;
+		}
+
+		if (playerScript.player.EnemiesKilled() == nextKillsDecrease) {
+			enemiesPerSecond = Mathf.Clamp (enemiesPerSecond - enemiesPerSecondIncrease, minimumEnemiesPerSecond, enemiesPerSecond);
+			nextKillsDecrease += enemiesPerSecondDecreaseKillsInterval;
+		}
 	}
 }
