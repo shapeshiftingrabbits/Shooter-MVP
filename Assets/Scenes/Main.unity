@@ -436,7 +436,9 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6580652, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
+    - {fileID: 6514156, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 594ac1638f7da224db2974760b32f56b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &685935338 stripped
