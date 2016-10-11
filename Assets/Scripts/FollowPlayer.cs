@@ -4,13 +4,23 @@ using System.Collections;
 [RequireComponent (typeof (Transform))]
 public class FollowPlayer : MonoBehaviour {
 	public GameObject player;
+	private Vector3 startingPosition;
 	Transform cameraTransform;
 
 	void Start () {
 		cameraTransform = GetComponent<Transform> ();
+		startingPosition = cameraTransform.position;
 	}
 
 	void Update () {
-		cameraTransform.position = new Vector3 (player.transform.position.x, cameraTransform.position.y, player.transform.position.z);
+		cameraTransform.position = cameraPosition();
+	}
+
+	Vector3 cameraPosition () {
+		return new Vector3 (
+			player.transform.position.x + startingPosition.x,
+			cameraTransform.position.y,
+			player.transform.position.z + startingPosition.z
+		);
 	}
 }
