@@ -7,9 +7,11 @@ public class GunBehaviour : MonoBehaviour {
 	private float fireRate = 0.2f;
 	private float lastShotInterval;
 	private Vector3 bulletStartPosition = new Vector3(0f, 0.01375f, 0f);
+	private Animator gunAnimator;
 
 	void Start () {
 		lastShotInterval = fireRate;
+		gunAnimator = gameObject.GetComponent<Animator> ();
 	}
 
 	void Update () {
@@ -17,6 +19,7 @@ public class GunBehaviour : MonoBehaviour {
 
 		if (Input.GetButton ("Fire") && lastShotInterval >= fireRate) {
 			Fire ();
+			gunAnimator.SetBool ("shotTriggered", true);
 			lastShotInterval = 0f;
 		}
 	}
