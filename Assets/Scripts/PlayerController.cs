@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent (typeof (Transform))]
-[RequireComponent (typeof (Rigidbody))]
 public class PlayerController : MonoBehaviour {
 
 	private float movementSpeed = 10f;
@@ -12,12 +11,10 @@ public class PlayerController : MonoBehaviour {
 	private float rotationDeadzone = 0.25f;
 
 	Transform playerTransform;
-	Rigidbody playerRigidbody;
 
 	// Use this for initialization
 	void Start () {
 		playerTransform = GetComponent<Transform> ();
-		playerRigidbody = GetComponent<Rigidbody> ();
 		ResetPosition ();
 	}
 
@@ -41,7 +38,7 @@ public class PlayerController : MonoBehaviour {
 	void Move(Vector2 movementInput) {
 		Vector3 movement = new Vector3 (movementInput.x * movementSpeed * Time.deltaTime,  0f, movementInput.y * movementSpeed * Time.deltaTime);
 
-		playerRigidbody.MovePosition (playerTransform.position + movement);
+		playerTransform.position = playerTransform.position + movement;
 	}
 
 	void Rotate(Vector2 rotationInput, float deltaTime) {
