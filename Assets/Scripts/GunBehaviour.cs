@@ -4,10 +4,13 @@ using System.Collections;
 public class GunBehaviour : MonoBehaviour {
 
 	public GameObject bulletPrefab;
-	private float fireRate = 0.2f;
+    public GameObject bulletCasingPrefab;
+    private float fireRate = 0.2f;
 	private float lastShotInterval;
 	private Vector3 bulletStartPosition = new Vector3(0f, 0.01375f, 0f);
-	private Animator gunAnimator;
+    private Vector3 bulletCasingStartPosition = new Vector3(0.00134f, 0.02091f, -0.00174f);
+    private float bulletCasingThrust = 10f;
+    private Animator gunAnimator;
 
 	void Start () {
 		lastShotInterval = fireRate;
@@ -25,8 +28,11 @@ public class GunBehaviour : MonoBehaviour {
 	}
 
 	void Fire () {
-		Instantiate (bulletPrefab, gameObject.transform.TransformPoint(bulletStartPosition), BulletRotation());
-	}
+        Instantiate(bulletPrefab, gameObject.transform.TransformPoint(bulletStartPosition), BulletRotation());
+
+        GameObject bulletCasing = (GameObject)Instantiate(bulletCasingPrefab, gameObject.transform.TransformPoint(bulletCasingStartPosition), BulletRotation());
+        bulletCasing.GetComponent<Rigidbody>().AddForce((gameObject.transform.right / 200) * bulletCasingThrust, ForceMode.Impulse);
+    }
 
 	Quaternion BulletRotation () {
 		return Quaternion.FromToRotation(Vector3.up, gameObject.transform.forward);
