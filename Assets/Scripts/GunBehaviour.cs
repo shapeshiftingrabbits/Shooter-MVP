@@ -31,10 +31,15 @@ public class GunBehaviour : MonoBehaviour {
         Instantiate(bulletPrefab, gameObject.transform.TransformPoint(bulletStartPosition), BulletRotation());
 
         GameObject bulletCasing = (GameObject)Instantiate(bulletCasingPrefab, gameObject.transform.TransformPoint(bulletCasingStartPosition), BulletRotation());
-        bulletCasing.GetComponent<Rigidbody>().AddForce((gameObject.transform.right / 200) * bulletCasingThrust, ForceMode.Impulse);
+        bulletCasing.GetComponent<Rigidbody>().AddForce(BulletCasingForceDirection() * bulletCasingThrust, ForceMode.Impulse);
+        bulletCasing.GetComponent<Rigidbody>().AddTorque(-gameObject.transform.right);
     }
 
 	Quaternion BulletRotation () {
 		return Quaternion.FromToRotation(Vector3.up, gameObject.transform.forward);
 	}
+
+    Vector3 BulletCasingForceDirection() {
+        return ((gameObject.transform.up / 2000) + (gameObject.transform.right / 6000));
+    }
 }
