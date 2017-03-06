@@ -42,8 +42,6 @@ public class SpawnEnemies : MonoBehaviour {
 		if (enemiesPerSecond <= maximumEnemiesPerSecond) {
 			IncreaseSpawnRate ();
 		}
-
-		Debug.Log (SpawnSpeed() + " seconds spawn speed = " + enemiesPerSecond + " enemies per second");
 	}
 
 	void SpawnEnemy () {
