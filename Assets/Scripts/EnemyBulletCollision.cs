@@ -12,11 +12,11 @@ public class EnemyBulletCollision : MonoBehaviour {
 		playerScript = playerGameObject.GetComponent<PlayerScript> ();
 	}
 
-	void OnTriggerEnter (Collider other) {
-		if (other.gameObject.tag == bulletTag) {
+	void OnCollisionEnter (Collision collision) {
+		if (collision.gameObject.tag == bulletTag) {
 			playerScript.player.incrementEnemyKills ();
 			Destroy (gameObject);
-			Destroy (other.gameObject);
+			Destroy (collision.gameObject);
 		}
 	}
 }

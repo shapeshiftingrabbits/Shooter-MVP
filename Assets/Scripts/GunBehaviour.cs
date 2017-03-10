@@ -9,6 +9,7 @@ public class GunBehaviour : MonoBehaviour {
 	private float lastShotInterval;
 	private Vector3 bulletStartPosition = new Vector3(0f, 0.01375f, 0f);
     private Vector3 bulletCasingStartPosition = new Vector3(0.00134f, 0.02091f, -0.00174f);
+	private float bulletThrust = 20f;
     private float bulletCasingThrust = 0.01f;
 	private float bulletCasingMinimumThrustDirectionUp = 2f;
 	private float bulletCasingMaximumThrustDirectionUp = 4f;
@@ -36,7 +37,8 @@ public class GunBehaviour : MonoBehaviour {
 	}
 
 	void Fire () {
-        Instantiate(bulletPrefab, gameObject.transform.TransformPoint(bulletStartPosition), BulletRotation());
+		GameObject bullet = (GameObject)Instantiate(bulletPrefab, gameObject.transform.TransformPoint(bulletStartPosition), BulletRotation());
+		bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.up * bulletThrust, ForceMode.Force);
 
         GameObject bulletCasing = (GameObject)Instantiate(bulletCasingPrefab, gameObject.transform.TransformPoint(bulletCasingStartPosition), BulletRotation());
         bulletCasing.GetComponent<Rigidbody>().AddForce(BulletCasingForce() * bulletCasingThrust, ForceMode.Impulse);
