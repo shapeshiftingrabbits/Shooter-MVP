@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent (typeof (Transform))]
-public class FollowPlayer : MonoBehaviour {
+public class CameraFollowTarget : MonoBehaviour {
 	public GameObject player;
 	private Vector3 startingPosition;
 	Transform cameraTransform;
