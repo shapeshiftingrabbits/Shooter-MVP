@@ -45,7 +45,8 @@ public class SpawnEnemies : MonoBehaviour {
 	}
 
 	void SpawnEnemy () {
-		Instantiate (enemyPrefab, enemyRandomSpawnPosition(), Quaternion.identity);
+		GameObject enemy = (GameObject) Instantiate (enemyPrefab, enemyRandomSpawnPosition(), Quaternion.identity);
+		enemy.GetComponent<MoveTowardsPlayer>().SetTarget(playerGameObject);
 	}
 
 	float SpawnSpeed() {
