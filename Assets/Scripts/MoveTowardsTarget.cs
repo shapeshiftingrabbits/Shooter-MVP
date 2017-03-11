@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveTowardsPlayer : MonoBehaviour {
+public class MoveTowardsTarget : MonoBehaviour {
 	private GameObject target;
 	private float rotationSpeed = 1f;
 	private float movementSpeed = 3f;
