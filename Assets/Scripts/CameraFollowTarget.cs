@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent (typeof (Transform))]
 public class CameraFollowTarget : MonoBehaviour {
-	public GameObject player;
+	public GameObject target;
 	private Vector3 startingPosition;
 	Transform cameraTransform;
 
@@ -18,9 +18,9 @@ public class CameraFollowTarget : MonoBehaviour {
 
 	Vector3 cameraPosition () {
 		return new Vector3 (
-			player.transform.position.x + startingPosition.x,
+			target.transform.position.x + startingPosition.x,
 			cameraTransform.position.y,
-			player.transform.position.z + startingPosition.z
+			target.transform.position.z + startingPosition.z
 		);
 	}
 }
