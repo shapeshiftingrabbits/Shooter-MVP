@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GunBehaviour : MonoBehaviour {
+public class ShootGun : MonoBehaviour {
 
 	public GameObject bulletPrefab;
     public GameObject bulletCasingPrefab;

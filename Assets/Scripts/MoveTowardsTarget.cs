@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveTowardsPlayer : MonoBehaviour {
-	private GameObject player;
+public class MoveTowardsTarget : MonoBehaviour {
+	private GameObject target;
 	private float rotationSpeed = 1f;
 	private float movementSpeed = 3f;
 
-	void Start () {
-		player = GameObject.Find ("Player");
+	public void SetTarget(GameObject newTarget) {
+		target = newTarget;
 	}
 
 	void Update () {
@@ -31,7 +31,7 @@ public class MoveTowardsPlayer : MonoBehaviour {
 		return (
 			Vector3.RotateTowards (
 				gameObject.transform.forward,
-				player.transform.position - gameObject.transform.position,
+				target.transform.position - gameObject.transform.position,
 				deltaTime * rotationSpeed,
 				0f
 			)
