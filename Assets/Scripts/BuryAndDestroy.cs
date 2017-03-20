@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyBulletCasing : MonoBehaviour {
+public class BuryAndDestroy : MonoBehaviour {
 
 	Rigidbody bulletCasingRigidbody;
 	float elapsedTimeBeforeBurying = 0f;
