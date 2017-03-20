@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent (typeof (Rigidbody))]
 public class BuryAndDestroy : MonoBehaviour {
 
-	Rigidbody bulletCasingRigidbody;
+	Rigidbody gameObjectRigidbody;
 	float elapsedTimeBeforeBurying = 0f;
 	float elapsedTimeBeforeDestroying = 0f;
 	float delayBeforeBurying = 10f;
@@ -13,22 +13,22 @@ public class BuryAndDestroy : MonoBehaviour {
 	bool rigidbodyDisabled = false;
 
 	void Start () {
-		bulletCasingRigidbody = gameObject.GetComponent<Rigidbody>();
+		gameObjectRigidbody = gameObject.GetComponent<Rigidbody>();
 	}
 
 	void FixedUpdate () {
 		elapsedTimeBeforeBurying += Time.deltaTime;
 
-		if (elapsedTimeBeforeBurying >= delayBeforeBurying && bulletCasingRigidbody.velocity == Vector3.zero) {
+		if (elapsedTimeBeforeBurying >= delayBeforeBurying && gameObjectRigidbody.velocity == Vector3.zero) {
 			elapsedTimeBeforeDestroying += Time.deltaTime;
 			BuryBelowground();
 		}
 	}
 
 	void DisableRigidbody () {
-		bulletCasingRigidbody.isKinematic = true;
-		bulletCasingRigidbody.useGravity = false;
-		bulletCasingRigidbody.detectCollisions = false;
+		gameObjectRigidbody.isKinematic = true;
+		gameObjectRigidbody.useGravity = false;
+		gameObjectRigidbody.detectCollisions = false;
 		rigidbodyDisabled = true;
 	}
 
