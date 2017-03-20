@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyBullet : MonoBehaviour {
+public class DestroyOnBecameInvisible : MonoBehaviour {
 	void OnBecameInvisible () {
 		Destroy (gameObject);
 	}
