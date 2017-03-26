@@ -20,13 +20,13 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (stickInput("Mouse X", "Mouse Y") != Vector2.zero)
+		if (AxesToVector2("Mouse X", "Mouse Y") != Vector2.zero)
 			usingMouseAim = true;
-		else if (stickInput ("RotateX", "RotateY") != Vector2.zero) {
+		else if (AxesToVector2 ("RotateX", "RotateY") != Vector2.zero) {
 			usingMouseAim = false;
 		}
 
-		Vector2 movementInput = stickInput ("Horizontal", "Vertical");
+		Vector2 movementInput = AxesToVector2 ("Horizontal", "Vertical");
 		if (movementInput.magnitude >= movementDeadzone) {
 			Move (movementInput);
 		}
@@ -38,14 +38,14 @@ public class PlayerController : MonoBehaviour {
 			);
 		}
 		else {
-			Vector2 rotationInput = stickInput ("RotateX", "RotateY");
+			Vector2 rotationInput = AxesToVector2 ("RotateX", "RotateY");
 			if (rotationInput.magnitude >= rotationDeadzone) {
 				Rotate (rotationInput, Time.deltaTime);
 			}
 		}
 	}
 
-	Vector2 stickInput(string XAxisName, string YAxisName) {
+	Vector2 AxesToVector2(string XAxisName, string YAxisName) {
 		return new Vector2 (Input.GetAxis (XAxisName), Input.GetAxis (YAxisName));
 	}
 
