@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Move(Vector2 movementInput) {
-		Vector3 movement = new Vector3 (movementInput.x * movementSpeed * Time.deltaTime,  0f, movementInput.y * movementSpeed * Time.deltaTime);
+		Vector3 movement = new Vector3 (movementInput.x,  0f, movementInput.y)  * movementSpeed * Time.deltaTime;
 
 		playerTransform.position = playerTransform.position + movement;
 	}
