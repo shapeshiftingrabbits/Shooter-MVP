@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	private float rotationSpeed = 10f;
 	private float movementDeadzone = 0.25f;
 	private float rotationDeadzone = 0.25f;
-
+	private bool usingMouseAim = false;
 	Transform playerTransform;
 
 	// Use this for initialization
@@ -20,14 +20,28 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		if (stickInput("Mouse X", "Mouse Y") != Vector2.zero)
+			usingMouseAim = true;
+		else if (stickInput ("RotateX", "RotateY") != Vector2.zero) {
+			usingMouseAim = false;
+		}
+
 		Vector2 movementInput = stickInput ("Horizontal", "Vertical");
 		if (movementInput.magnitude >= movementDeadzone) {
 			Move (movementInput);
 		}
 
-		Vector2 rotationInput = stickInput ("RotateX", "RotateY");
-		if (rotationInput.magnitude >= rotationDeadzone) {
-			Rotate (rotationInput, Time.deltaTime);
+		if (usingMouseAim) {
+			Rotate(
+				(Input.mousePosition - Camera.main.WorldToScreenPoint(playerTransform.position)).normalized,
+				Time.deltaTime
+			);
+		}
+		else {
+			Vector2 rotationInput = stickInput ("RotateX", "RotateY");
+			if (rotationInput.magnitude >= rotationDeadzone) {
+				Rotate (rotationInput, Time.deltaTime);
+			}
 		}
 	}
 
