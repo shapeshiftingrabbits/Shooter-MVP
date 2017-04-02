@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class DestroyOnBecameInvisible : MonoBehaviour {
-	void OnBecameInvisible () {
-		Destroy (gameObject);
-	}
+    void OnBecameInvisible () {
+        Destroy (gameObject);
+    }
 }
