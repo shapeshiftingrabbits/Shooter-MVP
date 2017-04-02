@@ -1227,6 +1227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567c7c889eb3f0646b01f2b2d54a6eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdollPrefab: {fileID: 1896903930619416, guid: c9e29970f9d95014193b26d40e9b1e98,
+    type: 2}
 --- !u!114 &11486344
 MonoBehaviour:
   m_ObjectHideFlags: 1
