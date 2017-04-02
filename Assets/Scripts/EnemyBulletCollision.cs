@@ -21,7 +21,6 @@ public class EnemyBulletCollision : MonoBehaviour {
     void OnCollisionEnter (Collision collision) {
         if (collision.gameObject.tag == bulletTag) {
             playerScript.player.incrementEnemyKills ();
-            Destroy (collision.gameObject);
 
             enemyRagdoll.transform.position = gameObject.transform.position;
             enemyRagdoll.transform.rotation = gameObject.transform.rotation;
