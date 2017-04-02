@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Cursor.visible = false;
 		playerTransform = GetComponent<Transform> ();
 		ResetPosition ();
 	}
@@ -28,6 +29,10 @@ public class PlayerController : MonoBehaviour {
 
 		Vector2 movementInput = AxesToVector2 ("Horizontal", "Vertical");
 		if (movementInput.magnitude >= movementDeadzone) {
+			if (movementInput.magnitude > 1f) {
+				movementInput = movementInput / movementInput.magnitude;
+			}
+
 			Move (movementInput);
 		}
 
