@@ -6,8 +6,9 @@ public class BuryAndDestroy : MonoBehaviour {
     private Rigidbody[] rigidbodies;
     private float elapsedTimeBeforeBurying = 0f;
     private float elapsedTimeBeforeDestroying = 0f;
-    private float delayBeforeBurying = 10f;
-    private float burySpeed = 0.0002f;
+    public float delayBeforeBurying = 10f;
+    public float burySpeed = 0.0002f;
+    public float delayBeforeDestroying = 10f;
     private bool rigidbodiesDisabled = false;
 
     void Start () {
@@ -39,12 +40,8 @@ public class BuryAndDestroy : MonoBehaviour {
 
         gameObject.transform.position -= (Vector3.up * burySpeed);
 
-        if (elapsedTimeBeforeDestroying >= DelayBeforeDestroying()) {
+        if (elapsedTimeBeforeDestroying >= delayBeforeDestroying) {
             Destroy(gameObject);
         }
-    }
-
-    float DelayBeforeDestroying () {
-        return ((1 / burySpeed) * 0.002f);
     }
 }

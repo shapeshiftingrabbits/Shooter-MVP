@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 4179829126805608}
   - component: {fileID: 95293390684877720}
   - component: {fileID: 54636922396433742}
+  - component: {fileID: 114319381290798154}
   m_Layer: 0
   m_Name: Enemy Ragdoll
   m_TagString: Enemy
@@ -1491,6 +1492,20 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114319381290798154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896903930619416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c92b015a9429a4d90ce0720334de2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayBeforeBurying: 5
+  burySpeed: 0.002
+  delayBeforeDestroying: 10
 --- !u!136 &136103282296089652
 CapsuleCollider:
   m_ObjectHideFlags: 1
