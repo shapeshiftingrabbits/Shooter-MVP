@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour {
 
 		Vector2 movementInput = AxesToVector2 ("Horizontal", "Vertical");
 		if (movementInput.magnitude >= movementDeadzone) {
+			if (movementInput.magnitude > 1f) {
+				movementInput = movementInput / movementInput.magnitude;
+			}
+
 			Move (movementInput);
 		}
 
