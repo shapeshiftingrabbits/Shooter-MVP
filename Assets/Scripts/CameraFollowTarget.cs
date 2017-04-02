@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 [RequireComponent (typeof (Transform))]
 public class CameraFollowTarget : MonoBehaviour {
