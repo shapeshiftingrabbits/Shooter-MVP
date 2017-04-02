@@ -261,6 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4473918277176562}
   - component: {fileID: 108938445030808600}
+  - component: {fileID: 114412699667536944}
   m_Layer: 0
   m_Name: Right eye glow
   m_TagString: Untagged
@@ -358,6 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4043386271670396}
   - component: {fileID: 108607143672215090}
+  - component: {fileID: 114654367231264712}
   m_Layer: 0
   m_Name: Left eye glow
   m_TagString: Untagged
@@ -1506,6 +1508,30 @@ MonoBehaviour:
   delayBeforeBurying: 5
   burySpeed: 0.002
   delayBeforeDestroying: 10
+--- !u!114 &114412699667536944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354873158336402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15bf3a1daf082f49bf3d5680cb569b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+--- !u!114 &114654367231264712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520852856944618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15bf3a1daf082f49bf3d5680cb569b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!136 &136103282296089652
 CapsuleCollider:
   m_ObjectHideFlags: 1
