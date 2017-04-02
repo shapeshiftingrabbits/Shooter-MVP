@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Cursor.visible = false;
 		playerTransform = GetComponent<Transform> ();
 		ResetPosition ();
 	}
