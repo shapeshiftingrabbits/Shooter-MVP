@@ -22,8 +22,7 @@ public class EnemyBulletCollision : MonoBehaviour {
         if (collision.gameObject.tag == bulletTag) {
             playerScript.player.incrementEnemyKills ();
 
-            enemyRagdoll.transform.position = gameObject.transform.position;
-            enemyRagdoll.transform.rotation = gameObject.transform.rotation;
+            CopyTransformHierachy(enemyRagdoll.transform, gameObject.transform);
 
             Destroy (gameObject);
            
@@ -32,6 +31,21 @@ public class EnemyBulletCollision : MonoBehaviour {
             foreach (ContactPoint contactPoint in collision.contacts) {
                 enemyRagdollRigidbody.AddForceAtPosition(collision.relativeVelocity, contactPoint.point, ForceMode.Impulse);
             }
+        }
+    }
+
+    void CopyTransformHierachy(Transform destinationTransform, Transform referenceTransform) {
+        destinationTransform.position = referenceTransform.position;
+        destinationTransform.rotation = referenceTransform.rotation;
+        destinationTransform.localScale = referenceTransform.localScale;
+
+        for (int i = 0; i < referenceTransform.childCount; i++)
+        {
+            Transform referenceTransformChild = referenceTransform.GetChild(i);
+            Transform destinationTransformChild = destinationTransform.GetChild(i);
+    
+            if(referenceTransformChild != null && destinationTransformChild != null)
+                CopyTransformHierachy(destinationTransformChild, referenceTransformChild);
         }
     }
 }
