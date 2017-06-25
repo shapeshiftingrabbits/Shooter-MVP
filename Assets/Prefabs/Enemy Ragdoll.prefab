@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752677937239434}
   - component: {fileID: 137177712968533588}
+  - component: {fileID: 114808393220090186}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -51,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4702780292859846}
   - component: {fileID: 137875358317900922}
+  - component: {fileID: 114927955962795010}
   m_Layer: 0
   m_Name: Arm Left
   m_TagString: Untagged
@@ -100,6 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4849239291468402}
   - component: {fileID: 137559672397152776}
+  - component: {fileID: 114812524392792004}
   m_Layer: 0
   m_Name: Leg Left
   m_TagString: Untagged
@@ -245,6 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4806556593482326}
   - component: {fileID: 137418038053566698}
+  - component: {fileID: 114394589079084674}
   m_Layer: 0
   m_Name: Leg Right
   m_TagString: Untagged
@@ -428,6 +432,7 @@ GameObject:
   - component: {fileID: 4669653899548570}
   - component: {fileID: 137430887332595948}
   - component: {fileID: 64068758684234080}
+  - component: {fileID: 114681641003527538}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
@@ -581,6 +586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4564977980658584}
   - component: {fileID: 137202351949102110}
+  - component: {fileID: 114225224917814170}
   m_Layer: 0
   m_Name: Arm Right
   m_TagString: Untagged
@@ -1433,7 +1439,7 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1520852856944618}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
@@ -1458,6 +1464,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!108 &108938445030808600
@@ -1467,7 +1475,7 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1354873158336402}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
@@ -1492,8 +1500,23 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114225224917814170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992561236605418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
+  changeSpeed: 1
 --- !u!114 &114319381290798154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1508,6 +1531,19 @@ MonoBehaviour:
   delayBeforeBurying: 5
   burySpeed: 0.002
   delayBeforeDestroying: 10
+--- !u!114 &114394589079084674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339349136942712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
+  changeSpeed: 1
 --- !u!114 &114412699667536944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1532,6 +1568,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &114681641003527538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760749913825712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
+  changeSpeed: 1
+--- !u!114 &114808393220090186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1009423090896294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
+  changeSpeed: 1
+--- !u!114 &114812524392792004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1129198466417526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
+  changeSpeed: 1
+--- !u!114 &114927955962795010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1031876474806140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
+  changeSpeed: 1
 --- !u!136 &136103282296089652
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1614,6 +1702,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -1658,6 +1747,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -1708,6 +1798,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -1755,6 +1846,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -1801,6 +1893,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -1848,6 +1941,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
