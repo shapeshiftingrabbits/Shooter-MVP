@@ -18,7 +18,7 @@ public class ChangeMaterialColorOverTime : MonoBehaviour {
 	void Update () {
 		lerpPosition += Time.deltaTime * changeSpeed;
 
-		newColor = Color.Lerp(originalColor, Color.black, lerpPosition);
+		newColor = Color.Lerp(originalColor, destinationColor, lerpPosition);
 		gameObjectRenderer.material.SetColor("_Color", newColor);
 	}
 }
