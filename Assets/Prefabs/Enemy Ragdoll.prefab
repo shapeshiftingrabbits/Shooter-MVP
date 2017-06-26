@@ -1515,8 +1515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSpeed: 1
   destinationColor: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 0}
+  changeSpeed: 2
 --- !u!114 &114319381290798154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1542,8 +1542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSpeed: 1
   destinationColor: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 0}
+  changeSpeed: 2
 --- !u!114 &114412699667536944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1579,8 +1579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSpeed: 1
   destinationColor: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 0}
+  changeSpeed: 2
 --- !u!114 &114808393220090186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1592,8 +1592,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSpeed: 1
   destinationColor: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 0}
+  changeSpeed: 2
 --- !u!114 &114812524392792004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1605,8 +1605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSpeed: 1
   destinationColor: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 0}
+  changeSpeed: 2
 --- !u!114 &114927955962795010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1618,8 +1618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e8d5362fdf0b244baa73c01811e9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSpeed: 1
   destinationColor: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 0}
+  changeSpeed: 2
 --- !u!136 &136103282296089652
 CapsuleCollider:
   m_ObjectHideFlags: 1
