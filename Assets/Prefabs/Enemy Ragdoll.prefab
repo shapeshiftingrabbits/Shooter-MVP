@@ -1528,9 +1528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c92b015a9429a4d90ce0720334de2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeBurying: 5
-  burySpeed: 0.002
-  delayBeforeDestroying: 10
+  delayBeforeBurying: 3
+  burySpeed: 0.01
+  delayBeforeDestroying: 3
 --- !u!114 &114394589079084674
 MonoBehaviour:
   m_ObjectHideFlags: 1
