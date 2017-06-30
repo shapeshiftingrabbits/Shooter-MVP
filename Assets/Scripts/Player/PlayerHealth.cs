@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour {
 	public int startingHealth;
 	public int currentHealth;
 	public Slider healthSlider;
-    private bool isDead;
+    public bool isDead;
 
 
     void Awake(){
@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Death(){
 		isDead = true;
-		RestartLevel();
+		//RestartLevel();
 	}
 
 	void UpdateHealthUI(){
