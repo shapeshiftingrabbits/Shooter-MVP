@@ -6,42 +6,36 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public int startingHealth;
-	public int currentHealth;
-	public Slider healthSlider;
+    public int startingHealth;
+    public int currentHealth;
+    public Slider healthSlider;
     private bool isDead;
 
 
     void Awake(){
-		currentHealth = startingHealth;
+        currentHealth = startingHealth;
         healthSlider.value = currentHealth;
-		isDead = false;
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        isDead = false;
+    }
 
-	public void TakeDamage(int amount){
-		currentHealth -= amount;
-		UpdateHealthUI();
-		if (currentHealth <= 0 && !isDead){
-			Death();
-		}
-	}
+    public void TakeDamage(int amount){
+        currentHealth -= amount;
+        UpdateHealthUI();
+        if (currentHealth <= 0 && !isDead){
+            Death();
+        }
+    }
 
-	void Death(){
-		isDead = true;
-		RestartLevel();
-	}
+    void Death(){
+        isDead = true;
+        RestartLevel();
+    }
 
-	void UpdateHealthUI(){
-		healthSlider.value = currentHealth;
-	}
+    void UpdateHealthUI(){
+        healthSlider.value = currentHealth;
+    }
 
-	void RestartLevel(){
+    void RestartLevel(){
         SceneManager.LoadScene ("Main");
-	}
+    }
 }
