@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour {
+public class EnemyAttack : MonoBehaviour
+{
 
     private string playerTag = "Player";
     private GameObject player;
@@ -10,47 +11,58 @@ public class EnemyAttack : MonoBehaviour {
     public int attackPoints = 10;
     bool isPlayerInRange = false;
     public float attackTimeThreshold = 1f;
-    float cumulTimeUpdate;
+    float incrementTimeUpdate;
 
-    void Awake (){
-        player = GameObject.FindGameObjectWithTag (playerTag);
-        playerHealth = player.GetComponent <PlayerHealth> ();
+    void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag(playerTag);
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
 
-    void OnCollisionEnter (Collision collision) {
-        if (collision.gameObject == player) {
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject == player)
+        {
             isPlayerInRange = true;
         }
     }
 
-     void OnCollisionExit (Collision collision) {
-        if (collision.gameObject == player) {
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject == player)
+        {
             isPlayerInRange = false;
         }
     }
 
-    void Update(){
+    void Update()
+    {
         UpdateTimer();
-        if (IsTimeToAttack() && isPlayerInRange){
+        if (IsTimeToAttack() && isPlayerInRange)
+        {
             Attack(player);
             ResetTimer();
         }
     }
 
-    void Attack(GameObject player){
+    void Attack(GameObject player)
+    {
         playerHealth.TakeDamage(attackPoints);
     }
 
-    void UpdateTimer(){
-        cumulTimeUpdate += Time.deltaTime;
+    void UpdateTimer()
+    {
+        incrementTimeUpdate += Time.deltaTime;
     }
 
-    void ResetTimer(){
-        cumulTimeUpdate = 0;
+    void ResetTimer()
+    {
+        incrementTimeUpdate = 0;
     }
 
-    bool IsTimeToAttack(){
-        return cumulTimeUpdate >= attackTimeThreshold;
+    bool IsTimeToAttack()
+    {
+        return incrementTimeUpdate >= attackTimeThreshold;
     }
 }
