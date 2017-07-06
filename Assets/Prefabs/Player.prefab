@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4937078223428426}
   m_Layer: 8
-  m_Name: HandL1
+  m_Name: Wrist Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 137405366273676584}
   - component: {fileID: 64977072335624048}
   m_Layer: 8
-  m_Name: ArmRight1
+  m_Name: Arm Right Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4465559664946188}
   m_Layer: 8
-  m_Name: ArmR2
+  m_Name: Elbow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4714010109462610}
   m_Layer: 8
-  m_Name: HandL2
+  m_Name: Fingers First Phalanx Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4748758167843044}
   m_Layer: 8
-  m_Name: LegR2
+  m_Name: Knee Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4247530204748044}
   m_Layer: 8
-  m_Name: Spine2
+  m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 137983069789123690}
   - component: {fileID: 64551230423088554}
   m_Layer: 8
-  m_Name: Head1
+  m_Name: Head Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4207317458476450}
   m_Layer: 8
-  m_Name: LegL3
+  m_Name: Foot Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4875239387801738}
   m_Layer: 8
-  m_Name: LegL1
+  m_Name: Leg Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4163447114122954}
   m_Layer: 8
-  m_Name: Rig1
+  m_Name: Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,7 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4360801657756546}
   m_Layer: 8
-  m_Name: HandR1
+  m_Name: Wrist Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,7 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4960518653482944}
   m_Layer: 8
-  m_Name: FingerL2
+  m_Name: Thumb Second Phalanx Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 137342518055969632}
   - component: {fileID: 64490165848127970}
   m_Layer: 8
-  m_Name: LegRight1
+  m_Name: Leg Right Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,7 +340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4499657936411936}
   m_Layer: 8
-  m_Name: ArmL2
+  m_Name: Elbow Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 137706347441900548}
   - component: {fileID: 64907536132441742}
   m_Layer: 8
-  m_Name: Body1
+  m_Name: Torso Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,7 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4214313480045978}
   m_Layer: 8
-  m_Name: FootL1
+  m_Name: Toes Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4761726146320224}
   m_Layer: 8
-  m_Name: FingerR1
+  m_Name: Thumb First Phalanx Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,7 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4369973394236972}
   m_Layer: 8
-  m_Name: FingerL1
+  m_Name: Thumb First Phalanx Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,7 +433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4100400077744824}
   m_Layer: 8
-  m_Name: ArmR1
+  m_Name: Arm Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,7 +448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4807703713034926}
   m_Layer: 8
-  m_Name: LegL2
+  m_Name: Knee Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,7 +463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4573132492250044}
   m_Layer: 8
-  m_Name: HandR3
+  m_Name: Fingers Second Phalanx Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4999788895409890}
   m_Layer: 8
-  m_Name: HandL3
+  m_Name: Fingers Second Phalanx Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -509,7 +509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4867229202369392}
   m_Layer: 8
-  m_Name: FingerR2
+  m_Name: Thumb Second Phalanx Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4975458647976758}
   m_Layer: 8
-  m_Name: Spine1
+  m_Name: Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -539,7 +539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4241430051345440}
   m_Layer: 8
-  m_Name: LegR1
+  m_Name: Leg Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 137020163506098994}
   - component: {fileID: 64128794484646400}
   m_Layer: 8
-  m_Name: ArmLeft1
+  m_Name: Arm Left Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,7 +571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4676441296700744}
   m_Layer: 8
-  m_Name: HandR2
+  m_Name: Fingers First Phalanx Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,7 +586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4724891679596070}
   m_Layer: 8
-  m_Name: LegR3
+  m_Name: Foot Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,7 +601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4908137166294928}
   m_Layer: 8
-  m_Name: ArmL1
+  m_Name: Arm Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,7 +632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4126100065469658}
   m_Layer: 8
-  m_Name: FootR1
+  m_Name: Toes Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 137701971667323348}
   - component: {fileID: 64099620567626856}
   m_Layer: 8
-  m_Name: LegLeft1
+  m_Name: Leg Left Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,7 +701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4907686195571486}
   m_Layer: 8
-  m_Name: Neck1
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1354,6 +1354,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23096113805088158
 MeshRenderer:
@@ -1385,6 +1386,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23169860797404572
 MeshRenderer:
@@ -1416,6 +1418,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23175282369105526
 MeshRenderer:
@@ -1449,6 +1452,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23338011337732652
 MeshRenderer:
@@ -1480,6 +1484,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23759003970891488
 MeshRenderer:
@@ -1511,6 +1516,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33086424866528624
 MeshFilter:
@@ -1711,7 +1717,7 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1768259273667666}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.95943207, b: 0.7647059, a: 1}
   m_Intensity: 2
@@ -1736,6 +1742,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!108 &108382150253351042
@@ -1745,7 +1753,7 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1867875027295394}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
@@ -1770,6 +1778,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!108 &108583873794891646
@@ -1779,7 +1789,7 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1640416573846284}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.95943207, b: 0.7647059, a: 1}
   m_Intensity: 2
@@ -1804,6 +1814,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &114044315900374042
@@ -1895,6 +1907,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -1945,6 +1958,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -1992,6 +2006,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -2042,6 +2057,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -2089,6 +2105,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -2135,6 +2152,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
