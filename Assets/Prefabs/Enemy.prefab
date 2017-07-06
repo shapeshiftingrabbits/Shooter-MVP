@@ -534,9 +534,9 @@ GameObject:
   - component: {fileID: 412762}
   - component: {fileID: 9553522}
   - component: {fileID: 5439032}
-  - component: {fileID: 114858037447684664}
   - component: {fileID: 114969866533000178}
   - component: {fileID: 114740142416446712}
+  - component: {fileID: 114151465391020978}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -1522,6 +1522,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194852}
   m_IsPrefabParent: 1
+--- !u!114 &114151465391020978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35272b39b3621414dbe8da8d313be706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114740142416446712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1535,17 +1546,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoints: 10
   attackTimeThreshold: 1
---- !u!114 &114858037447684664
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c92b015a9429a4d90ce0720334de2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114969866533000178
 MonoBehaviour:
   m_ObjectHideFlags: 1

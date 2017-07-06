@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour {
         spawnEnemies = GetComponent<SpawnEnemies>();
         player = GameObject.FindGameObjectWithTag(Constants.Tag.PLAYER);
         playerHealth = player.GetComponent<PlayerHealth>();
-        
     }
 
     /// <summary>
@@ -28,7 +27,11 @@ public class GameManager : MonoBehaviour {
     {
         if (playerHealth.IsPlayerDead()){
             spawnEnemies.StopSpawn();
+            if (Input.anyKey){
+                RestartLevel();
+            }
         }
+        
     }
 
     public void RestartLevel()
