@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class GameManager : MonoBehaviour {
 
-	private SpawnEnemies spawnEnemies;
+    private SpawnEnemies spawnEnemies;
     public PlayerHealth playerHealth;
 
     private GameObject player;
-
+    
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -30,4 +31,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene ("Main");
+    }
 }

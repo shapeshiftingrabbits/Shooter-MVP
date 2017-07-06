@@ -26,15 +26,11 @@ public class PlayerHealth : MonoBehaviour {
 
     void Death(){
         isDead = true;
-        RestartLevel();
+     
     }
 
     void UpdateHealthUI(){
         healthSlider.value = currentHealth;
-    }
-
-    void RestartLevel(){
-        SceneManager.LoadScene (Constants.Scene.MAIN);
     }
 
     public bool IsPlayerDead(){
