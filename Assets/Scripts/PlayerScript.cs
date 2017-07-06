@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
+
     public class Player
     {
         private int enemiesKilled = 0;
