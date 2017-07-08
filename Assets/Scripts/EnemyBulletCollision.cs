@@ -6,7 +6,6 @@ public class EnemyBulletCollision : MonoBehaviour {
     private GameObject playerGameObject;
     private PlayerScript playerScript;
     private GameObject enemyRagdoll;
-    private Rigidbody enemyRagdollRigidbody;
     private string bulletTag = "Bullet";
 
     void Start () {
@@ -15,7 +14,6 @@ public class EnemyBulletCollision : MonoBehaviour {
 
         enemyRagdoll = (GameObject) Instantiate(ragdollPrefab, gameObject.transform.position, gameObject.transform.rotation);
         enemyRagdoll.SetActive(false);
-        enemyRagdollRigidbody = enemyRagdoll.GetComponent<Rigidbody>();
     }
 
     void OnCollisionEnter (Collision collision) {
@@ -25,11 +23,20 @@ public class EnemyBulletCollision : MonoBehaviour {
             CopyTransformHierachy(enemyRagdoll.transform, gameObject.transform);
 
             Destroy (gameObject);
-           
+
             enemyRagdoll.SetActive(true);
 
             foreach (ContactPoint contactPoint in collision.contacts) {
-                enemyRagdollRigidbody.AddForceAtPosition(collision.relativeVelocity, contactPoint.point, ForceMode.Impulse);
+                Collider[] ragdollColliders = enemyRagdoll.GetComponentsInChildren<Collider>();
+                foreach (Collider ragdollCollider in ragdollColliders) {
+                    if (ragdollCollider.bounds.Contains(contactPoint.point)) {
+                        Rigidbody ragdollLimbRigidbody = ragdollCollider.gameObject.GetComponent<Rigidbody>();
+                        if (ragdollLimbRigidbody != null) {
+                            ragdollLimbRigidbody.AddForceAtPosition(collision.relativeVelocity, contactPoint.point, ForceMode.Impulse);
+                            break;
+                        }
+                    }
+                }
             }
         }
     }
@@ -43,7 +50,7 @@ public class EnemyBulletCollision : MonoBehaviour {
         {
             Transform referenceTransformChild = referenceTransform.GetChild(i);
             Transform destinationTransformChild = destinationTransform.GetChild(i);
-    
+
             if(referenceTransformChild != null && destinationTransformChild != null)
                 CopyTransformHierachy(destinationTransformChild, referenceTransformChild);
         }
