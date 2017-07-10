@@ -6,10 +6,9 @@ public class EnemyBulletCollision : MonoBehaviour {
     private GameObject playerGameObject;
     private PlayerScript playerScript;
     private GameObject enemyRagdoll;
-    private string bulletTag = "Bullet";
 
     void Start () {
-        playerGameObject = GameObject.Find ("Player");
+        playerGameObject = GameObject.Find (Constants.Tag.PLAYER);
         playerScript = playerGameObject.GetComponent<PlayerScript> ();
 
         enemyRagdoll = (GameObject) Instantiate(ragdollPrefab, gameObject.transform.position, gameObject.transform.rotation);
@@ -17,7 +16,7 @@ public class EnemyBulletCollision : MonoBehaviour {
     }
 
     void OnCollisionEnter (Collision collision) {
-        if (collision.gameObject.tag == bulletTag) {
+        if (collision.gameObject.tag == Constants.Tag.BULLET) {
             playerScript.player.incrementEnemyKills ();
 
             CopyTransformHierachy(enemyRagdoll.transform, gameObject.transform);
