@@ -36,6 +36,6 @@ public class GameManager : MonoBehaviour {
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene ("Main");
+        SceneManager.LoadScene (Constants.Scene.MAIN);
     }
 }

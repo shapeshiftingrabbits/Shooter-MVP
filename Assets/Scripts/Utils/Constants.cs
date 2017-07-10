@@ -13,6 +13,9 @@ public static class  Constants {
         public const string MAIN = "Main";
     }
     
+    public static class Trigger{
+        public const string GAME_OVER = "GameOver";
+    }
 
 }
 
