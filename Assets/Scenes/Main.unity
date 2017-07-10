@@ -241,7 +241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -435.99997, y: 0}
+  m_AnchoredPosition: {x: -436, y: 0}
   m_SizeDelta: {x: -873.00006, y: 59}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &296772625
@@ -379,10 +379,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1967687525603240, guid: 4b8e5a564f4147b4d8a3583399e00f75, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114124269673038028, guid: 4b8e5a564f4147b4d8a3583399e00f75,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1867708374}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b8e5a564f4147b4d8a3583399e00f75, type: 2}
   m_IsPrefabParent: 0
@@ -731,20 +732,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1967687525603240, guid: 4b8e5a564f4147b4d8a3583399e00f75,
     type: 2}
   m_PrefabInternal: {fileID: 350402376}
---- !u!114 &1090573172
+--- !u!114 &1090573172 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1090573171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 114124269673038028, guid: 4b8e5a564f4147b4d8a3583399e00f75,
+    type: 2}
+  m_PrefabInternal: {fileID: 350402376}
   m_Script: {fileID: 11500000, guid: efa65ac2dcef20f478a57b8a32a9078a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
-  healthSlider: {fileID: 1867708374}
 --- !u!1 &1140536204
 GameObject:
   m_ObjectHideFlags: 0
