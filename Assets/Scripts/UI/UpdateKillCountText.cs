@@ -13,6 +13,6 @@ public class UpdateKillCountText : MonoBehaviour {
     }
     
     void Update () {
-        killCountText.text = playerScript.player.EnemiesKilled ().ToString();
+        killCountText.text = "Score: " + playerScript.player.EnemiesKilled ().ToString();
     }
 }

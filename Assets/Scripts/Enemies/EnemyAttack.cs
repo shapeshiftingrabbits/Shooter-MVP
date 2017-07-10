@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
 
-    private string playerTag = "Player";
     private GameObject player;
     private PlayerHealth playerHealth;
     public int attackPoints = 10;
@@ -15,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
 
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag(playerTag);
+        player = GameObject.FindGameObjectWithTag(Constants.Tag.PLAYER);
         playerHealth = player.GetComponent<PlayerHealth>();
     }
 

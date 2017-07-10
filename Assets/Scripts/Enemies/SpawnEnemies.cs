@@ -23,6 +23,8 @@ public class SpawnEnemies : MonoBehaviour {
     int spawnMinRadius = 20;
     int spawnMaxRadius = 50;
 
+    private bool isStopped = false;
+
     void Start () {
         spawnSpeedTick = SpawnSpeed();
         playerScript = playerGameObject.GetComponent<PlayerScript> ();
@@ -30,6 +32,11 @@ public class SpawnEnemies : MonoBehaviour {
     }
 
     void Update () {
+
+        if (isStopped){
+            return;
+        }
+
         currentPlayTime += Time.deltaTime;
         spawnSpeedTick += Time.deltaTime;
 
@@ -79,5 +86,9 @@ public class SpawnEnemies : MonoBehaviour {
             enemiesPerSecond = Mathf.Clamp (enemiesPerSecond - enemiesPerSecondIncrease, minimumEnemiesPerSecond, enemiesPerSecond);
             nextKillsDecrease += enemiesPerSecondDecreaseKillsInterval;
         }
+    }
+
+    public void StopSpawn(){
+        isStopped = true;
     }
 }
