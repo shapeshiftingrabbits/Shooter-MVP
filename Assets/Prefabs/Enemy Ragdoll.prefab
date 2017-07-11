@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 54167649383956508}
   - component: {fileID: 144662277576431764}
   - component: {fileID: 65980405108620922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Elbow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4421320977081630}
   - component: {fileID: 137554255944581756}
   - component: {fileID: 114007566323862122}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Leg Right Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4247925680808360}
   - component: {fileID: 137391166690101906}
   - component: {fileID: 114483105430478228}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Torso Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4192508112078540}
   - component: {fileID: 137189158924242482}
   - component: {fileID: 114025038471821040}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm Right Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4284139357957292}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Thumb Second Phalanx Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4735259621527906}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wrist Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4632568483165248}
   - component: {fileID: 137205024642045702}
   - component: {fileID: 114642521031842298}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Leg Left Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4950915556599024}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Thumb First Phalanx Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 4735617681344832}
   - component: {fileID: 108594683564553216}
   - component: {fileID: 114456280241603646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right eye glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 65575692143898282}
   - component: {fileID: 54269328455540742}
   - component: {fileID: 144812918145372418}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Foot Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 54268847130262582}
   - component: {fileID: 144240748379594648}
   - component: {fileID: 65867833239715824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Leg Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4176382794747976}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fingers Second Phalanx Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 54262963363251386}
   - component: {fileID: 144059437219384442}
   - component: {fileID: 136194349894032920}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 95311103364866582}
   - component: {fileID: 54273843523761980}
   - component: {fileID: 114457022784453540}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy Ragdoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 65884148418724028}
   - component: {fileID: 54253815508193780}
   - component: {fileID: 144243763400584588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Foot Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4410043514325372}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Toes Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 4041891134293362}
   - component: {fileID: 137048714373623934}
   - component: {fileID: 114516496508813806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm Left Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 4497322295365998}
   - component: {fileID: 108537346709942052}
   - component: {fileID: 114085478470663248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left eye glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 54636153348869746}
   - component: {fileID: 144609918136702542}
   - component: {fileID: 65007955457320982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Knee Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4286556897068044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fingers First Phalanx Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4225615338161822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fingers Second Phalanx Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 54894400779376204}
   - component: {fileID: 144435258909279302}
   - component: {fileID: 65352013920607492}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4591260273580306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wrist Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 54886985718815442}
   - component: {fileID: 144200130290241534}
   - component: {fileID: 136397106994781966}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4166546108085332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Thumb Second Phalanx Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4231418601474530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fingers First Phalanx Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 54979469216553426}
   - component: {fileID: 65648342345507410}
   - component: {fileID: 144780253121167508}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4724599320060258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Thumb First Phalanx Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 54612123539428214}
   - component: {fileID: 144367352155617460}
   - component: {fileID: 65787044243610626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Elbow Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4499712785555734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Toes Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 54455944949302880}
   - component: {fileID: 144296274782141596}
   - component: {fileID: 65168607253996536}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Leg Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 54604672993563882}
   - component: {fileID: 144130449036881836}
   - component: {fileID: 65363150134060694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 4526114717829024}
   - component: {fileID: 54303915394483676}
   - component: {fileID: 65121677853290652}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 4416810399563318}
   - component: {fileID: 137505318111294792}
   - component: {fileID: 114334797895734264}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 54341127394006206}
   - component: {fileID: 144093221558560750}
   - component: {fileID: 65925354552232398}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Knee Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
