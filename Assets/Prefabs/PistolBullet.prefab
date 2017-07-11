@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 54171054465348340}
   - component: {fileID: 136812410295611078}
   - component: {fileID: 11434096}
-  - component: {fileID: 114166088466328162}
+  - component: {fileID: 114404941215396800}
   m_Layer: 8
   m_Name: PistolBullet
   m_TagString: Bullet
@@ -64,6 +64,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &3302568
 MeshFilter:
@@ -109,7 +110,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &114166088466328162
+--- !u!114 &114404941215396800
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -120,8 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10957b308ac714d49b8b667455780d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroySelf: 1
-  destroyCollidingObject: 0
 --- !u!136 &136812410295611078
 CapsuleCollider:
   m_ObjectHideFlags: 1
