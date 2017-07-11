@@ -25,8 +25,9 @@ public class EnemyBulletCollision : MonoBehaviour {
 
             enemyRagdoll.SetActive(true);
 
+            Collider[] ragdollColliders = enemyRagdoll.GetComponentsInChildren<Collider>();
+
             foreach (ContactPoint contactPoint in collision.contacts) {
-                Collider[] ragdollColliders = enemyRagdoll.GetComponentsInChildren<Collider>();
                 foreach (Collider ragdollCollider in ragdollColliders) {
                     if (ragdollCollider.bounds.Contains(contactPoint.point)) {
                         Rigidbody ragdollLimbRigidbody = ragdollCollider.gameObject.GetComponent<Rigidbody>();
