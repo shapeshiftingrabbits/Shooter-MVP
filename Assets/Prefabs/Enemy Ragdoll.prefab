@@ -151,7 +151,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4735617681344832}
   - component: {fileID: 108594683564553216}
-  - component: {fileID: 114456280241603646}
   m_Layer: 10
   m_Name: Right eye glow
   m_TagString: Untagged
@@ -305,7 +304,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4497322295365998}
   - component: {fileID: 108537346709942052}
-  - component: {fileID: 114085478470663248}
   m_Layer: 10
   m_Name: Left eye glow
   m_TagString: Untagged
@@ -1463,7 +1461,7 @@ Animator:
   m_GameObject: {fileID: 1318147970021222}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 11de9d883ba29e7408300ad1c2cc424b, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 543ec6903146cba448615e6c627c99e8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1569,18 +1567,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationColor: {r: 0, g: 0, b: 0, a: 0}
   changeSpeed: 2
---- !u!114 &114085478470663248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1487693092073108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e15bf3a1daf082f49bf3d5680cb569b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!114 &114334797895734264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1594,18 +1580,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationColor: {r: 0, g: 0, b: 0, a: 0}
   changeSpeed: 2
---- !u!114 &114456280241603646
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1272777656175982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e15bf3a1daf082f49bf3d5680cb569b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!114 &114457022784453540
 MonoBehaviour:
   m_ObjectHideFlags: 1
