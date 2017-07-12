@@ -3,45 +3,45 @@
 [RequireComponent (typeof (Rigidbody))]
 public class BuryAndDestroy : MonoBehaviour {
 
-    Rigidbody gameObjectRigidbody;
-    float elapsedTimeBeforeBurying = 0f;
-    float elapsedTimeBeforeDestroying = 0f;
-    float delayBeforeBurying = 10f;
-    float burySpeed = 0.0002f;
-    bool rigidbodyDisabled = false;
+    private Rigidbody[] rigidbodies;
+    private float elapsedTimeBeforeBurying = 0f;
+    private float elapsedTimeBeforeDestroying = 0f;
+    public float delayBeforeBurying = 10f;
+    public float burySpeed = 0.0002f;
+    public float delayBeforeDestroying = 10f;
+    private bool rigidbodiesDisabled = false;
 
     void Start () {
-        gameObjectRigidbody = gameObject.GetComponent<Rigidbody>();
+        rigidbodies = gameObject.GetComponentsInChildren<Rigidbody>();
     }
 
     void FixedUpdate () {
         elapsedTimeBeforeBurying += Time.deltaTime;
 
-        if (elapsedTimeBeforeBurying >= delayBeforeBurying && gameObjectRigidbody.velocity == Vector3.zero) {
+        if (elapsedTimeBeforeBurying >= delayBeforeBurying) {
             elapsedTimeBeforeDestroying += Time.deltaTime;
             BuryBelowground();
         }
     }
 
-    void DisableRigidbody () {
-        gameObjectRigidbody.isKinematic = true;
-        gameObjectRigidbody.useGravity = false;
-        gameObjectRigidbody.detectCollisions = false;
-        rigidbodyDisabled = true;
+    void DisableRigidbody (Rigidbody rigidbody) {
+        rigidbody.isKinematic = true;
+        rigidbody.useGravity = false;
+        rigidbody.detectCollisions = false;
+        rigidbodiesDisabled = true;
     }
 
     void BuryBelowground () {
-        if (rigidbodyDisabled == false)
-            DisableRigidbody ();
+        if (rigidbodiesDisabled == false) {
+            foreach (Rigidbody rigidbody in rigidbodies) {
+                DisableRigidbody (rigidbody);
+            }
+        }
 
         gameObject.transform.position -= (Vector3.up * burySpeed);
 
-        if (elapsedTimeBeforeDestroying >= DelayBeforeDestroying()) {
+        if (elapsedTimeBeforeDestroying >= delayBeforeDestroying) {
             Destroy(gameObject);
         }
-    }
-
-    float DelayBeforeDestroying () {
-        return ((1 / burySpeed) * 0.002f);
     }
 }
