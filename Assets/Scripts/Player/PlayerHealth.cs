@@ -3,36 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class PlayerHealth : MonoBehaviour {
 
-    public int startingHealth;
-    public int currentHealth;
-    public Slider healthSlider;
-    private bool isDead;
+namespace UnityTest
+{
+    public class PlayerHealth : MonoBehaviour, HealthControllerDelegate
+    {
 
-    void Awake(){
-        currentHealth = startingHealth;
-        healthSlider.value = currentHealth;
-        isDead = false;
-    }
+        public int startingHealth;
+        public Slider healthSlider;
 
-    public void TakeDamage(int amount){
-        currentHealth -= amount;
-        UpdateHealthUI();
-        if (currentHealth <= 0 && !isDead){
-            Death();
+        private HealthController healthController;
+
+        void Awake()
+        {
+            healthController = new HealthController(startingHealth, this);
+            healthSlider.value = healthController.GetHealth();
+        }
+
+        public void TakeDamage(int amount)
+        {
+            healthController.SubstractDamage(amount);
+        }
+
+        void UpdateHealthUI()
+        {
+            healthSlider.value = healthController.GetHealth();
+        }
+
+        public bool IsPlayerDead()
+        {
+            return healthController.IsDead();
+        }
+
+        public void HealthDidChange(int health)
+        {
+            healthSlider.value = health;
+        }
+
+        public void AliveStatusDidChange(HealthController.AliveStatus status)
+        {
+            switch (status)
+            {
+                case HealthController.AliveStatus.alive:
+                    break;
+                case HealthController.AliveStatus.dead:
+                    //TODO play dead animation.
+                    break;
+            }
         }
     }
-
-    void Death(){
-        isDead = true;
-    }
-
-    void UpdateHealthUI(){
-        healthSlider.value = currentHealth;
-    }
-
-    public bool IsPlayerDead(){
-        return currentHealth <= 0;
-    }
 }
+
