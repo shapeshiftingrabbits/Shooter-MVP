@@ -72,9 +72,9 @@ namespace UnityTest.IntegrationTests
 
             if (configuration.sendResultsOverNetwork)
                 settings.AddConfigurationFile(TestRunnerConfigurator.integrationTestsNetwork,
-                                              string.Join("\n", configuration.GetConnectionIPs()));
+                                              String.Join("\n", configuration.GetConnectionIPs()));
 
-            settings.AddConfigurationFile (TestRunnerConfigurator.testScenesToRun, string.Join ("\n", configuration.testScenes.ToArray()));
+            settings.AddConfigurationFile (TestRunnerConfigurator.testScenesToRun, String.Join ("\n", configuration.testScenes.ToArray()));
 
             settings.ChangeSettingsForIntegrationTests();
 
@@ -90,7 +90,7 @@ namespace UnityTest.IntegrationTests
 
             AssetDatabase.Refresh();
 
-            if (!string.IsNullOrEmpty(result))
+            if (!result.IsNullOrEmpty())
             {
                 if (InternalEditorUtility.inBatchMode)
                     EditorApplication.Exit(Batch.returnCodeRunError);
