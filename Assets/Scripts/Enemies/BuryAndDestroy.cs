@@ -25,7 +25,6 @@ public class BuryAndDestroy : MonoBehaviour {
     }
 
     void DisableRigidbody (Rigidbody rigidbody) {
-        rigidbody.isKinematic = true;
         rigidbody.useGravity = false;
         rigidbody.detectCollisions = false;
         rigidbodiesDisabled = true;
