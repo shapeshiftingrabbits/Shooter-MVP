@@ -1,19 +1,25 @@
 ﻿using UnityEngine;
 
-public class PlayerScript : MonoBehaviour {
-
-    public class Player
+namespace Player
+{
+    public class PlayerScript : MonoBehaviour
     {
-        private int enemiesKilled = 0;
 
-        public int EnemiesKilled () {
-            return enemiesKilled;
+        public class Player
+        {
+            private int enemiesKilled = 0;
+
+            public int EnemiesKilled()
+            {
+                return enemiesKilled;
+            }
+
+            public void incrementEnemyKills()
+            {
+                enemiesKilled++;
+            }
         }
 
-        public void incrementEnemyKills () {
-            enemiesKilled++;
-        }
+        public Player player = new Player();
     }
-
-    public Player player = new Player();
 }

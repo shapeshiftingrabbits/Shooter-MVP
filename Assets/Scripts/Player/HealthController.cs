@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace UnityTest{
+namespace Player{
 
     // Helps keep track of the health component associated with an object.
     public class HealthController

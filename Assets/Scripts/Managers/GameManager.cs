@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Player;
 
-namespace UnityTest
+
+namespace Managers
 {
     public class GameManager : MonoBehaviour
     {

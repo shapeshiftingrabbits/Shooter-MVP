@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-namespace UnityTest
+namespace Player
 {
     public class PlayerHealth : MonoBehaviour, HealthControllerDelegate
     {
