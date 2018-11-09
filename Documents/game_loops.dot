@@ -1,0 +1,31 @@
+digraph G {
+    subgraph unimplemented_loops {
+        node [shape="rectangle" style="dashed"]
+        edge [style="dashed"]
+
+        build_defences [label="Build defences"]
+        explore [label="Explore\n(gather resources)"]
+    }
+
+    subgraph cluster_defend {
+        label="Defend"
+
+        defend_start [label="Start"]
+        defend_shoot [label="Shoot"]
+        defend_kill_enemy [label="Kill\nenemy"]
+        defend_get_loot [label="Get loot\n(payoff)"]
+        defend_end [label="End" style="dashed"]
+    }
+
+    subgraph unimplemented_loops_edges {
+        build_defences -> defend_start [style="dashed"]
+        defend_end -> explore [style="dashed"]
+        explore -> build_defences [style="dashed"]
+    }
+
+    subgraph defend_edges {
+        defend_start -> defend_shoot -> defend_kill_enemy -> defend_get_loot
+        defend_get_loot -> defend_end [style="dashed"]
+        defend_get_loot -> defend_shoot
+    }
+}
