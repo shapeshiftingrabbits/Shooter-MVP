@@ -1,7 +1,7 @@
 using System;
-using System.Collections.Generic;
 
-namespace Player{
+namespace Player
+{
 
     // Helps keep track of the health component associated with an object.
     public class HealthController
@@ -16,6 +16,17 @@ namespace Player{
             alive, dead
         }
 
+        public int Health
+        {
+            set
+            {
+                this.health = value;
+                this.CheckDeathStatus();
+            }
+
+            get { return this.health; }
+        }
+
         public HealthController(int startingHealth, HealthControllerDelegate healthDelegate)
         {
             this.health = startingHealth;
@@ -26,8 +37,7 @@ namespace Player{
         {
             health -= damageAmount;
             this.CheckDeathStatus();
-            HealthControllerDelegate strongDelegate = healthDelegate.Target as HealthControllerDelegate;
-            if (strongDelegate != null)
+            if (healthDelegate.Target is HealthControllerDelegate strongDelegate)
             {
                 strongDelegate.HealthDidChange(health);
             }
@@ -39,22 +49,10 @@ namespace Player{
             return this.aliveStatus == AliveStatus.dead;
         }
 
-        public void SetHealth(int health)
-        {
-            this.health = health;
-            this.CheckDeathStatus();
-        }
-
-        public int GetHealth()
-        {
-            return this.health;
-        }
-
         private void CheckDeathStatus()
         {
             aliveStatus = (health <= 0) ? AliveStatus.dead : AliveStatus.alive;
-            var strongDelegate = healthDelegate.Target as HealthControllerDelegate;
-            if (strongDelegate != null)
+            if (healthDelegate.Target is HealthControllerDelegate strongDelegate)
             {
                 strongDelegate.AliveStatusDidChange(aliveStatus);
             }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using Player;
 
@@ -30,7 +28,7 @@ namespace Managers
         /// </summary>
         void Update()
         {
-            if (playerHealth.IsPlayerDead())
+            if (playerHealth.IsDead())
             {
                 spawnEnemies.StopSpawn();
                 if (Input.anyKey)

@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Player;
 using UnityEngine;
-using Player;
 
-namespace UnityTest
+namespace Managers
 {
     public class GameOverManager : MonoBehaviour
     {
@@ -19,7 +17,7 @@ namespace UnityTest
         // Update is called once per frame
         void Update()
         {
-            if (playerHealth.IsPlayerDead() == true)
+            if (playerHealth.IsDead() == true)
             {
                 animator.SetTrigger(Constants.Trigger.GAME_OVER);
             }

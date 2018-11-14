@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -17,7 +14,7 @@ namespace Player
         void Awake()
         {
             healthController = new HealthController(startingHealth, this);
-            healthSlider.value = healthController.GetHealth();
+            healthSlider.value = healthController.Health;
         }
 
         public void TakeDamage(int amount)
@@ -27,14 +24,15 @@ namespace Player
 
         void UpdateHealthUI()
         {
-            healthSlider.value = healthController.GetHealth();
+            healthSlider.value = healthController.Health;
         }
 
-        public bool IsPlayerDead()
+        public bool IsDead()
         {
             return healthController.IsDead();
         }
 
+        #region HealthControllerDelegate
         public void HealthDidChange(int health)
         {
             healthSlider.value = health;
@@ -42,15 +40,10 @@ namespace Player
 
         public void AliveStatusDidChange(HealthController.AliveStatus status)
         {
-            switch (status)
-            {
-                case HealthController.AliveStatus.alive:
-                    break;
-                case HealthController.AliveStatus.dead:
-                    //TODO play dead animation.
-                    break;
-            }
+            //DO NOTHING
         }
+
+        #endregion
     }
 }
 
