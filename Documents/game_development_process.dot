@@ -1,0 +1,90 @@
+digraph G {
+  newrank="true"
+
+  start [shape=Mdiamond]
+  end [shape=Msquare]
+
+  subgraph cluster_prototyping_phase {
+    label="Prototyping phase"
+
+    prototype_build [label="Build prototype"]
+    prototype_evaluate [label="Evaluate prototype: is it fun?"]
+    prototype_not_viable [label="No"]
+    prototype_viable [label="Yes"]
+  }
+
+  subgraph cluster_pre_commitment_phase {
+    label="Pre-commitment phase"
+
+    mvp_build [label="Build MVP"]
+    market_research [label="Do market research.\nIs the game viable according to market?"]
+    market_research_viable [label="Yes"]
+    market_research_not_viable [label="No"]
+  }
+
+  subgraph cluster_commitment_phase {
+    label="Commitment phase"
+
+    business_plan [label="Make a business plan.\nIs it viable?"]
+    business_plan_viable [label="Yes"]
+    business_plan_not_viable [label="No"]
+    commit [label="Commit to project"]
+  }
+
+  subgraph cluster_pre_release_phase {
+    label="Pre-release phase"
+
+    post_commitment_advertise
+    mvp_improvement
+    mvp_improvement_evaluate
+    mvp_improvement_viable
+    mvp_improvement_not_viable
+    is_game_finished
+    is_game_finished_no
+    is_game_finished_yes
+  }
+
+  subgraph cluster_release_phase {
+    label="Release phase"
+
+    release_game
+    release_advertise
+  }
+
+  subgraph cluster_post_release_phase {
+    label="Post-release phase"
+
+    maintain_game
+    expand_game
+    post_release_advertise
+  }
+
+  subgraph edges {
+    start -> prototype_build -> prototype_evaluate -> prototype_not_viable -> prototype_build
+    prototype_evaluate -> prototype_viable -> mvp_build -> market_research
+
+    market_research -> market_research_viable -> business_plan
+    market_research -> market_research_not_viable
+    market_research_not_viable -> prototype_build
+    market_research_not_viable -> mvp_build
+
+    business_plan -> business_plan_not_viable
+    business_plan_not_viable -> business_plan
+    business_plan_not_viable -> mvp_build
+    business_plan_not_viable -> prototype_build
+    business_plan -> business_plan_viable -> commit -> post_commitment_advertise -> mvp_improvement -> post_commitment_advertise
+
+    mvp_improvement -> mvp_improvement_evaluate
+    mvp_improvement_evaluate -> mvp_improvement_viable -> is_game_finished
+    mvp_improvement_evaluate -> mvp_improvement_not_viable -> mvp_improvement
+
+    is_game_finished -> is_game_finished_no -> mvp_improvement
+    is_game_finished -> is_game_finished_yes -> release_advertise -> release_game -> maintain_game
+
+    maintain_game -> post_release_advertise -> maintain_game
+    maintain_game -> expand_game -> maintain_game
+
+    maintain_game -> end
+    post_release_advertise -> end
+  }
+}
