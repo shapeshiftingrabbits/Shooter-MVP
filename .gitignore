@@ -31,3 +31,6 @@ sysinfo.txt
 
 #ignore .vscode
 .vscode
+
+#ignore visual studio
+.vs

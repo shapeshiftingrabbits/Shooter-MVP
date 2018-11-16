@@ -1,38 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-public class PlayerHealth : MonoBehaviour {
 
-    public int startingHealth;
-    public int currentHealth;
-    public Slider healthSlider;
-    private bool isDead;
+namespace Player
+{
+    public class PlayerHealth : MonoBehaviour, HealthControllerDelegate
+    {
 
-    void Awake(){
-        currentHealth = startingHealth;
-        healthSlider.value = currentHealth;
-        isDead = false;
-    }
+        public int startingHealth;
+        public Slider healthSlider;
 
-    public void TakeDamage(int amount){
-        currentHealth -= amount;
-        UpdateHealthUI();
-        if (currentHealth <= 0 && !isDead){
-            Death();
+        private HealthController healthController;
+
+        void Awake()
+        {
+            healthController = new HealthController(startingHealth, this);
+            healthSlider.value = healthController.Health;
         }
-    }
 
-    void Death(){
-        isDead = true;
-    }
+        public void TakeDamage(int amount)
+        {
+            healthController.SubstractDamage(amount);
+        }
 
-    void UpdateHealthUI(){
-        healthSlider.value = currentHealth;
-    }
+        void UpdateHealthUI()
+        {
+            healthSlider.value = healthController.Health;
+        }
 
-    public bool IsPlayerDead(){
-        return currentHealth <= 0;
+        public bool IsDead()
+        {
+            return healthController.IsDead();
+        }
+
+        #region HealthControllerDelegate
+        public void HealthDidChange(int health)
+        {
+            healthSlider.value = health;
+        }
+
+        public void AliveStatusDidChange(HealthController.AliveStatus status)
+        {
+            //DO NOTHING
+        }
+
+        #endregion
     }
 }
+

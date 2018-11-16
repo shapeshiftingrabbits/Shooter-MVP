@@ -1,21 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Player;
 using UnityEngine;
 
-public class GameOverManager : MonoBehaviour {
+namespace Managers
+{
+    public class GameOverManager : MonoBehaviour
+    {
 
-	public PlayerHealth playerHealth;
-	private Animator animator;
+        public PlayerHealth playerHealth;
+        private Animator animator;
 
-	void Awake (){
-		animator = GetComponent<Animator>();
-	}
+        void Awake()
+        {
+            animator = GetComponent<Animator>();
+        }
 
-	// Update is called once per frame
-	void Update () {
-		if (playerHealth.IsPlayerDead() == true)
-		{
-			animator.SetTrigger(Constants.Trigger.GAME_OVER);
-		}
-	}
+        // Update is called once per frame
+        void Update()
+        {
+            if (playerHealth.IsDead() == true)
+            {
+                animator.SetTrigger(Constants.Trigger.GAME_OVER);
+            }
+        }
+    }
 }
