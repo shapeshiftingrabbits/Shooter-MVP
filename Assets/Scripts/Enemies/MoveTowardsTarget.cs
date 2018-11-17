@@ -2,8 +2,8 @@
 
 public class MoveTowardsTarget : MonoBehaviour {
     private GameObject target;
-    private float rotationSpeed = 1f;
-    private float movementSpeed = 3f;
+    private float rotationSpeed = 3f;
+    private float movementSpeed = 10f;
 
     public void SetTarget(GameObject newTarget) {
         target = newTarget;
