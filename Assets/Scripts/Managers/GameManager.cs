@@ -31,17 +31,9 @@ namespace Managers
             if (playerHealth.IsDead())
             {
                 spawnEnemies.StopSpawn();
-                if (Input.anyKey)
-                {
-                    RestartLevel();
-                }
             }
 
         }
 
-        public void RestartLevel()
-        {
-            SceneManager.LoadScene(Constants.Scene.MAIN);
-        }
     }
 }

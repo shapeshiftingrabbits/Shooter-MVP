@@ -1,5 +1,6 @@
 ﻿using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Managers
 {
@@ -7,11 +8,12 @@ namespace Managers
     {
 
         public PlayerHealth playerHealth;
-        private Animator animator;
+        public Animator panelAnimator;
+        private bool shouldListenUserInput = false;
 
         void Awake()
         {
-            animator = GetComponent<Animator>();
+            
         }
 
         // Update is called once per frame
@@ -19,8 +21,40 @@ namespace Managers
         {
             if (playerHealth.IsDead() == true)
             {
-                animator.SetTrigger(Constants.Trigger.GAME_OVER);
+
+                this.ShowGameOverPanel();
+                if ( this.shouldListenUserInput)
+                {
+                    if (Input.anyKey)
+                    {
+                        this.RestartLevel();
+                    }
+                }
             }
         }
+
+        public void ShowGameOverPanel()
+        {
+              panelAnimator.SetTrigger(Constants.Trigger.GAME_OVER);
+        }
+
+        internal void disableListeningForUserInput()
+        {
+            Debug.Log("disableListeningForUserInput");
+            this.shouldListenUserInput = false;
+        }
+
+        internal void enableListeningForUserInput()
+        {
+            Debug.Log("enableListeningForUserInput");
+            this.shouldListenUserInput = true;
+        }
+
+        public void RestartLevel()
+        {
+            Debug.Log("RestartLevel");
+            SceneManager.LoadScene(Constants.Scene.MAIN);
+        }
+
     }
 }
