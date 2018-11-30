@@ -8,7 +8,7 @@ public class GameOverEvent : MonoBehaviour
     public void OnGameOverAnimationEnd()
     {
         GameOverManager gameOverManager = gameOverManagerObject.GetComponent<GameOverManager>();
-        gameOverManager.enableListeningForUserInput();
+        gameOverManager.EnableListeningForUserInput();
     }
 
 }

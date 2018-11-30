@@ -6,28 +6,25 @@ namespace Managers
 {
     public class GameOverManager : MonoBehaviour
     {
-
         public PlayerHealth playerHealth;
         public Animator panelAnimator;
         private bool shouldListenUserInput = false;
 
-        void Awake()
+        void Update()
         {
-            
+            HandleGameOverCheck();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void HandleGameOverCheck()
         {
             if (playerHealth.IsDead() == true)
             {
-
-                this.ShowGameOverPanel();
-                if ( this.shouldListenUserInput)
+                ShowGameOverPanel();
+                if (shouldListenUserInput)
                 {
                     if (Input.anyKey)
                     {
-                        this.RestartLevel();
+                        RestartLevel();
                     }
                 }
             }
@@ -35,26 +32,22 @@ namespace Managers
 
         public void ShowGameOverPanel()
         {
-              panelAnimator.SetTrigger(Constants.Trigger.GAME_OVER);
+            panelAnimator.SetTrigger(Constants.Trigger.GAME_OVER);
         }
 
-        internal void disableListeningForUserInput()
+        internal void DisableListeningForUserInput()
         {
-            Debug.Log("disableListeningForUserInput");
-            this.shouldListenUserInput = false;
+            shouldListenUserInput = false;
         }
 
-        internal void enableListeningForUserInput()
+        internal void EnableListeningForUserInput()
         {
-            Debug.Log("enableListeningForUserInput");
-            this.shouldListenUserInput = true;
+            shouldListenUserInput = true;
         }
 
         public void RestartLevel()
         {
-            Debug.Log("RestartLevel");
             SceneManager.LoadScene(Constants.Scene.MAIN);
         }
-
     }
 }
