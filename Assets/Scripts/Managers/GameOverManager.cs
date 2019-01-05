@@ -1,26 +1,53 @@
 ﻿using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Managers
 {
     public class GameOverManager : MonoBehaviour
     {
-
         public PlayerHealth playerHealth;
-        private Animator animator;
+        public Animator panelAnimator;
+        private bool shouldListenUserInput = false;
 
-        void Awake()
+        void Update()
         {
-            animator = GetComponent<Animator>();
+            HandleGameOverCheck();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void HandleGameOverCheck()
         {
             if (playerHealth.IsDead() == true)
             {
-                animator.SetTrigger(Constants.Trigger.GAME_OVER);
+                ShowGameOverPanel();
+                if (shouldListenUserInput)
+                {
+                    if (Input.anyKey)
+                    {
+                        RestartLevel();
+                    }
+                }
             }
+        }
+
+        public void ShowGameOverPanel()
+        {
+            panelAnimator.SetTrigger(Constants.Trigger.GAME_OVER);
+        }
+
+        internal void DisableListeningForUserInput()
+        {
+            shouldListenUserInput = false;
+        }
+
+        internal void EnableListeningForUserInput()
+        {
+            shouldListenUserInput = true;
+        }
+
+        public void RestartLevel()
+        {
+            SceneManager.LoadScene(Constants.Scene.MAIN);
         }
     }
 }
