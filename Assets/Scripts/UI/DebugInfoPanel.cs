@@ -2,8 +2,6 @@
 
 public class DebugInfoPanel : MonoBehaviour
 {
-  
-
     void OnGUI()
     {
         GUIStyle style = new GUIStyle();
@@ -12,7 +10,7 @@ public class DebugInfoPanel : MonoBehaviour
         style.fontSize = 20;
         style.normal.textColor = Color.white;
 
-        Rect rect = new Rect(0, Screen.height - 50, 200, 50);
+        Rect rect = CreateBox();
 
         float msec = Time.smoothDeltaTime * 1000.0f;
         float fps = 1.0f / Time.smoothDeltaTime;
@@ -21,5 +19,14 @@ public class DebugInfoPanel : MonoBehaviour
         GUI.Box(rect, text, style);
     }
 
+    private static Rect CreateBox()
+    {
+        float width = 200.0f;
+        float height = 50.0f;
+        float x = 16.0f;
+        float y = Screen.height - height;
+        Rect rect = new Rect(x, y, width, height);
+        return rect;
+    }
 }
     
