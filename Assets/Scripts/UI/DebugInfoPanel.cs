@@ -4,6 +4,11 @@ public class DebugInfoPanel : MonoBehaviour
 {
     void OnGUI()
     {
+        if (!Debug.isDebugBuild)
+        {
+            return;
+        }
+
         GUIStyle style = new GUIStyle();
 
         style.alignment = TextAnchor.MiddleLeft;
