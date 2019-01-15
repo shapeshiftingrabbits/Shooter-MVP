@@ -1,0 +1,16 @@
+{
+    "name": "Managers",
+    "references": [
+        "Player",
+        "Utils",
+        "Enemies"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

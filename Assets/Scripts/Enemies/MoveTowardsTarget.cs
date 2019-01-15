@@ -2,42 +2,33 @@
 
 public class MoveTowardsTarget : MonoBehaviour {
     private GameObject target;
-    private float rotationSpeed = 1f;
-    private float movementSpeed = 3f;
+    private float rotationSpeed = 3f;
+    private float movementSpeed = 10f;
+    private MovementController movementController;
 
-    public void SetTarget(GameObject newTarget) {
+    void Awake ()
+    {
+        movementController = new MovementController(movementSpeed, rotationSpeed);
+    }
+
+    public void SetTarget(GameObject newTarget)
+    {
         target = newTarget;
     }
 
-    void Update () {
+    void Update ()
+    {
         Rotate (Time.deltaTime);
         Move (Time.deltaTime);
     }
 
-    void Rotate (float deltaTime) {
-        gameObject.transform.rotation = nextRotation (deltaTime);
+    void Rotate (float deltaTime)
+    {
+        gameObject.transform.rotation = movementController.NextRotation (gameObject.transform.position, gameObject.transform.forward, target.transform.position, deltaTime);
     }
 
-    void Move (float deltaTime) {
-        gameObject.transform.position += nextPosition(deltaTime);
-    }
-
-    Quaternion nextRotation(float deltaTime) {
-        return Quaternion.LookRotation(nextLookDirection (deltaTime));
-    }
-
-    Vector3 nextLookDirection(float deltaTime) {
-        return (
-            Vector3.RotateTowards (
-                gameObject.transform.forward,
-                target.transform.position - gameObject.transform.position,
-                deltaTime * rotationSpeed,
-                0f
-            )
-        );
-    }
-
-    Vector3 nextPosition(float deltaTime) {
-        return (gameObject.transform.forward * deltaTime * movementSpeed);
+    void Move (float deltaTime)
+    {
+        gameObject.transform.position = movementController.NextPosition (gameObject.transform.position, gameObject.transform.forward, deltaTime);
     }
 }
