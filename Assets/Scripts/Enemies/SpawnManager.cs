@@ -5,7 +5,7 @@ using Player;
 
 namespace Managers
 {
-    public class GameManager : MonoBehaviour
+    public class SpawnManager : MonoBehaviour
     {
 
         private SpawnEnemies spawnEnemies;

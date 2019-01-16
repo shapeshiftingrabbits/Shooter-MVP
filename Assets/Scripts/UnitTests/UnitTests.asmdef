@@ -2,7 +2,8 @@
     "name": "UnitTests",
     "references": [
         "Player",
-        "Enemies"
+        "Enemies",
+        "Movement"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"
