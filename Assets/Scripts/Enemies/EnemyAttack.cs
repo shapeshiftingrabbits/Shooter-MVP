@@ -68,4 +68,4 @@ namespace Enemies
             return incrementTimeUpdate >= attackTimeThreshold;
         }
     }
-}   
+}

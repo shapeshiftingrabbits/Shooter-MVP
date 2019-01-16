@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnemyBulletCollision : MonoBehaviour {
 
+    public const string BULLET = "Bullet";
+
     public GameObject ragdollPrefab;
     private GameObject playerGameObject;
     private PlayerScript playerScript;
@@ -17,7 +19,7 @@ public class EnemyBulletCollision : MonoBehaviour {
     }
 
     void OnCollisionEnter (Collision collision) {
-        if (collision.gameObject.tag == Constants.Tag.BULLET) {
+        if (collision.gameObject.tag == BULLET) {
             playerScript.player.incrementEnemyKills ();
 
             CopyTransformHierachy(enemyRagdoll.transform, gameObject.transform);
