@@ -1,9 +1,7 @@
 {
-    "name": "Managers",
+    "name": "GameManager",
     "references": [
-        "Player",
-        "Utils",
-        "Enemies"
+        "Player"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

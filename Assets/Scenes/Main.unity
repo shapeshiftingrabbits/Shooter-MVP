@@ -1192,6 +1192,7 @@ GameObject:
   - component: {fileID: 1800968813}
   - component: {fileID: 1800968814}
   - component: {fileID: 1800968815}
+  - component: {fileID: 1800968816}
   m_Layer: 0
   m_Name: UIPanel
   m_TagString: Untagged
@@ -1260,6 +1261,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverManagerObject: {fileID: 1800968811}
+--- !u!114 &1800968816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800968811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041b59006fb0f2d4590acd39b6540c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1835128606
 GameObject:
   m_ObjectHideFlags: 0

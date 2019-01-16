@@ -6,6 +6,9 @@ namespace Managers
 {
     public class GameOverManager : MonoBehaviour
     {
+        public const string GAME_OVER = "GameOver";
+        public const string SCENE_MAIN = "Main";
+
         public PlayerHealth playerHealth;
         public Animator panelAnimator;
         private bool shouldListenUserInput = false;
@@ -32,7 +35,7 @@ namespace Managers
 
         public void ShowGameOverPanel()
         {
-            panelAnimator.SetTrigger(Constants.Trigger.GAME_OVER);
+            panelAnimator.SetTrigger(GAME_OVER);
         }
 
         internal void DisableListeningForUserInput()
@@ -47,7 +50,7 @@ namespace Managers
 
         public void RestartLevel()
         {
-            SceneManager.LoadScene(Constants.Scene.MAIN);
+            SceneManager.LoadScene(SCENE_MAIN);
         }
     }
 }
