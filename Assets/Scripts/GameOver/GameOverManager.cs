@@ -20,6 +20,13 @@ namespace Managers
 
         private void HandleGameOverCheck()
         {
+            if (Debug.isDebugBuild)
+            {
+                if (Input.GetKeyDown(KeyCode.O))
+                {
+                    ShowGameOverPanel();
+                }
+            }
             if (playerHealth.IsDead() == true)
             {
                 ShowGameOverPanel();
