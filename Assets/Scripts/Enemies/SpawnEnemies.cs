@@ -1,4 +1,4 @@
-﻿using Player;
+using Player;
 using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour {
@@ -6,7 +6,9 @@ public class SpawnEnemies : MonoBehaviour {
     public GameObject playerGameObject;
     private PlayerScript playerScript;
     public GameObject enemyPrefab;
-    public EnemySpeedScriptableObject fastEnemySpeedScriptableObject;
+    public EnemySpeedScriptableObject[] enemySpeedScriptableObjects = new EnemySpeedScriptableObject[2];
+
+    System.Random random = new System.Random();
 
     float previousPlayTimeTick = 0f;
     float currentPlayTime = 0f;
@@ -55,8 +57,10 @@ public class SpawnEnemies : MonoBehaviour {
     void SpawnEnemy () {
         GameObject enemy = (GameObject) Instantiate (enemyPrefab, enemyRandomSpawnPosition(), Quaternion.identity);
 
+        int randomIndex = random.Next(0, enemySpeedScriptableObjects.Length);
+
         enemy.GetComponent<MoveTowardsTarget>().SetTarget(playerGameObject);
-        enemy.GetComponent<MoveTowardsTarget>().movementController = fastEnemySpeedScriptableObject.movementController();
+        enemy.GetComponent<MoveTowardsTarget>().movementController = enemySpeedScriptableObjects[randomIndex].movementController();
     }
 
     float SpawnSpeed() {

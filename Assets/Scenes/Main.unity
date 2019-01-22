@@ -1588,5 +1588,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGameObject: {fileID: 1090573171}
   enemyPrefab: {fileID: 194852, guid: cebb16e26aa609e4f82d9c845062b862, type: 3}
-  fastEnemySpeedScriptableObject: {fileID: 11400000, guid: beec1d8660b654e42a431332907aedf4,
-    type: 2}
+  enemySpeedScriptableObjects:
+  - {fileID: 11400000, guid: beec1d8660b654e42a431332907aedf4, type: 2}
+  - {fileID: 11400000, guid: 5b7985841190a9f49a8bc567dfecfcd2, type: 2}
