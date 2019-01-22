@@ -2,13 +2,13 @@
 
 public class MoveTowardsTarget : MonoBehaviour {
     private GameObject target;
-    private float rotationSpeed = 3f;
-    private float movementSpeed = 10f;
-    private MovementController movementController;
+    private float defaultMovementSpeed = 0f;
+    private float defaultRotationSpeed = 0f;
+    public MovementController movementController;
 
     void Awake ()
     {
-        movementController = new MovementController(movementSpeed, rotationSpeed);
+        movementController = new MovementController(defaultMovementSpeed, defaultRotationSpeed);
     }
 
     public void SetTarget(GameObject newTarget)
