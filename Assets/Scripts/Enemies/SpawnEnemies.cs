@@ -6,6 +6,7 @@ public class SpawnEnemies : MonoBehaviour {
     public GameObject playerGameObject;
     private PlayerScript playerScript;
     public GameObject enemyPrefab;
+    public EnemySpeedScriptableObject fastEnemySpeedScriptableObject;
 
     float previousPlayTimeTick = 0f;
     float currentPlayTime = 0f;
@@ -55,7 +56,7 @@ public class SpawnEnemies : MonoBehaviour {
         GameObject enemy = (GameObject) Instantiate (enemyPrefab, enemyRandomSpawnPosition(), Quaternion.identity);
 
         enemy.GetComponent<MoveTowardsTarget>().SetTarget(playerGameObject);
-        enemy.GetComponent<MoveTowardsTarget>().movementController = new MovementController(10f, 3f);
+        enemy.GetComponent<MoveTowardsTarget>().movementController = fastEnemySpeedScriptableObject.movementController();
     }
 
     float SpawnSpeed() {

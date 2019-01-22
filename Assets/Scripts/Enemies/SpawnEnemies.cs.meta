@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: cd4db9adb6cc64c4b863b201a9742444
-timeCreated: 1472045306
-licenseType: Free
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerGameObject: {instanceID: 0}
+  - enemyPrefab: {instanceID: 0}
+  - fastEnemySpeedScriptableObject: {fileID: 11400000, guid: beec1d8660b654e42a431332907aedf4,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
